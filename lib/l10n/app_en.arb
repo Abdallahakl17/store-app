@@ -1,0 +1,51 @@
+{
+  "appName": "Shoply",
+
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "forgotPassword": "Forgot Password?",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "dontHaveAccount": "Don't have an account?",
+
+  "home": "Home",
+  "categories": "Categories",
+  "products": "Products",
+  "search": "Search products...",
+  "bestDeals": "Best Deals",
+  "featuredProducts": "Featured Products",
+
+  "productDetails": "Product Details",
+  "description": "Description",
+  "price": "Price",
+  "addToCart": "Add to Cart",
+  "buyNow": "Buy Now",
+  "outOfStock": "Out of Stock",
+
+  "cart": "Cart",
+  "emptyCart": "Your cart is empty",
+  "totalPrice": "Total Price",
+  "checkout": "Checkout",
+
+  "checkoutTitle": "Checkout",
+  "shippingAddress": "Shipping Address",
+  "paymentMethod": "Payment Method",
+  "confirmOrder": "Confirm Order",
+
+  "profile": "Profile",
+  "orders": "Orders",
+  "settings": "Settings",
+  "logout": "Logout",
+
+  "confirmLogoutTitle": "Confirm Logout",
+  "confirmLogoutDesc": "Are you sure you want to logout?",
+  "cancel": "Cancel",
+  "ok": "OK",
+
+  "success": "Success",
+  "error": "Error",
+  "loading": "Loading...",
+  "noData": "No data available",
+  "retry": "Retry"
+}

@@ -19,6 +19,7 @@ abstract class AppRouter {
       log(stackTrace.toString());
       return _errorRoute(text: e.toString());
     }
+    return _errorRoute(text: 'Route not found');
   }
 
   static Route<dynamic> _errorRoute({String text = 'Route not found'}) {

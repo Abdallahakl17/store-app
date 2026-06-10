@@ -1,18 +1,22 @@
 name: store_app
-description: "A new Flutter project."
+description: A new Flutter project.
 publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.11.4
+  sdk: ">=3.3.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
+  #   Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
   # UI
-  ansicolor: ^2.0.3
   cupertino_icons: ^1.0.8
   carousel_slider: ^5.1.2
   flutter_svg: ^2.3.0
@@ -21,6 +25,7 @@ dependencies:
 
   # State Management
   flutter_bloc: ^9.1.1
+  equatable: ^2.0.8
 
   # Networking
   dio: ^5.9.1
@@ -35,15 +40,19 @@ dependencies:
   # Dependency Injection
   get_it: ^9.2.0
 
-  # Utilities
-  equatable: ^2.0.8
+  # Functional Programming
   dartz: ^0.10.1
+
+  # UI Feedback
+  fluttertoast: ^9.1.0
+  ansicolor: ^2.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^6.0.0
+
   flutter_native_splash: ^2.4.6
   flutter_launcher_icons: ^0.14.4
 
@@ -64,14 +73,13 @@ flutter_native_splash:
 flutter_launcher_icons:
   android: true
   ios: true
-
-  image_path: "assets/images/app_icon.png"
-
+  image_path: assets/images/app_icon.png
   adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_foreground: "assets/images/app_icon.png"
+  adaptive_icon_foreground: assets/images/app_icon.png
 
 flutter:
   uses-material-design: true
+  generate: true
 
   assets:
     - assets/images/
@@ -82,12 +90,9 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins-Light.ttf
           weight: 300
-
         - asset: assets/fonts/Poppins-Regular.ttf
           weight: 400
-
         - asset: assets/fonts/Poppins-Medium.ttf
           weight: 500
-
         - asset: assets/fonts/Poppins-SemiBold.ttf
           weight: 600

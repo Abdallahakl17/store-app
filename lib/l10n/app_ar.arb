@@ -1,0 +1,51 @@
+{
+  "appName": "شوبلي",
+
+  "login": "تسجيل الدخول",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "forgotPassword": "نسيت كلمة المرور؟",
+  "signIn": "دخول",
+  "signUp": "إنشاء حساب",
+  "dontHaveAccount": "ليس لديك حساب؟",
+
+  "home": "الرئيسية",
+  "categories": "الأقسام",
+  "products": "المنتجات",
+  "search": "ابحث عن المنتجات...",
+  "bestDeals": "أفضل العروض",
+  "featuredProducts": "منتجات مميزة",
+
+  "productDetails": "تفاصيل المنتج",
+  "description": "الوصف",
+  "price": "السعر",
+  "addToCart": "أضف إلى السلة",
+  "buyNow": "اشتري الآن",
+  "outOfStock": "غير متوفر",
+
+  "cart": "السلة",
+  "emptyCart": "السلة فارغة",
+  "totalPrice": "الإجمالي",
+  "checkout": "الدفع",
+
+  "checkoutTitle": "إتمام الطلب",
+  "shippingAddress": "عنوان الشحن",
+  "paymentMethod": "طريقة الدفع",
+  "confirmOrder": "تأكيد الطلب",
+
+  "profile": "الملف الشخصي",
+  "orders": "الطلبات",
+  "settings": "الإعدادات",
+  "logout": "تسجيل الخروج",
+
+  "confirmLogoutTitle": "تأكيد تسجيل الخروج",
+  "confirmLogoutDesc": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "cancel": "إلغاء",
+  "ok": "موافق",
+
+  "success": "تم بنجاح",
+  "error": "خطأ",
+  "loading": "جاري التحميل...",
+  "noData": "لا توجد بيانات",
+  "retry": "إعادة المحاولة"
+}
