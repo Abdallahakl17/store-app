@@ -47,5 +47,25 @@
   "error": "Error",
   "loading": "Loading...",
   "noData": "No data available",
-  "retry": "Retry"
+  "retry": "Retry",
+   "nameRequired": "Name is required",
+  "nameTooShort": "Name must be at least 2 characters",
+
+  "enterYourEmail": "Please enter your email",
+  "invalidEmail": "Please enter a valid email",
+
+  "enterYourPassword": "Please enter your password",
+  "passwordTooShort": "Password must be at least 6 characters",
+
+  "phoneRequired": "Phone number is required",
+  "invalidPhone": "Please enter a valid phone number",
+
+  "titleRequired": "Title is required",
+  "titleTooShort": "Title must be at least 3 characters",
+
+  "descriptionRequired": "Description is required",
+  "descriptionTooShort": "Description must be at least 10 characters"
+
+
+
 }

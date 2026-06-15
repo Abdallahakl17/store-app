@@ -4,6 +4,7 @@
   "login": "تسجيل الدخول",
   "email": "البريد الإلكتروني",
   "password": "كلمة المرور",
+  "confirmPassword": "تأكيد كلمة المرور",
   "forgotPassword": "نسيت كلمة المرور؟",
   "signIn": "دخول",
   "signUp": "إنشاء حساب",
@@ -14,21 +15,21 @@
   "products": "المنتجات",
   "search": "ابحث عن المنتجات...",
   "bestDeals": "أفضل العروض",
-  "featuredProducts": "منتجات مميزة",
+  "featuredProducts": "المنتجات المميزة",
 
   "productDetails": "تفاصيل المنتج",
   "description": "الوصف",
   "price": "السعر",
   "addToCart": "أضف إلى السلة",
-  "buyNow": "اشتري الآن",
+  "buyNow": "اشترِ الآن",
   "outOfStock": "غير متوفر",
 
   "cart": "السلة",
   "emptyCart": "السلة فارغة",
-  "totalPrice": "الإجمالي",
-  "checkout": "الدفع",
+  "totalPrice": "السعر الإجمالي",
+  "checkout": "إتمام الشراء",
 
-  "checkoutTitle": "إتمام الطلب",
+  "checkoutTitle": "إتمام الشراء",
   "shippingAddress": "عنوان الشحن",
   "paymentMethod": "طريقة الدفع",
   "confirmOrder": "تأكيد الطلب",
@@ -39,13 +40,34 @@
   "logout": "تسجيل الخروج",
 
   "confirmLogoutTitle": "تأكيد تسجيل الخروج",
-  "confirmLogoutDesc": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "confirmLogoutDesc": "هل أنت متأكد من تسجيل الخروج؟",
   "cancel": "إلغاء",
   "ok": "موافق",
 
-  "success": "تم بنجاح",
+  "success": "نجاح",
   "error": "خطأ",
   "loading": "جاري التحميل...",
   "noData": "لا توجد بيانات",
-  "retry": "إعادة المحاولة"
+  "retry": "إعادة المحاولة",
+
+  "nameRequired": "الاسم مطلوب",
+  "nameTooShort": "يجب أن يحتوي الاسم على حرفين على الأقل",
+
+  "enterYourEmail": "يرجى إدخال البريد الإلكتروني",
+  "invalidEmail": "يرجى إدخال بريد إلكتروني صحيح",
+
+  "enterYourPassword": "يرجى إدخال كلمة المرور",
+  "passwordTooShort": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+
+  "enterConfirmPassword": "يرجى تأكيد كلمة المرور",
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+
+  "phoneRequired": "رقم الهاتف مطلوب",
+  "invalidPhone": "يرجى إدخال رقم هاتف صحيح",
+
+  "titleRequired": "العنوان مطلوب",
+  "titleTooShort": "يجب أن يحتوي العنوان على 3 أحرف على الأقل",
+
+  "descriptionRequired": "الوصف مطلوب",
+  "descriptionTooShort": "يجب أن يحتوي الوصف على 10 أحرف على الأقل"
 }

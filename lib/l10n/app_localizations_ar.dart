@@ -48,7 +48,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get bestDeals => 'أفضل العروض';
 
   @override
-  String get featuredProducts => 'منتجات مميزة';
+  String get featuredProducts => 'المنتجات المميزة';
 
   @override
   String get productDetails => 'تفاصيل المنتج';
@@ -63,7 +63,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addToCart => 'أضف إلى السلة';
 
   @override
-  String get buyNow => 'اشتري الآن';
+  String get buyNow => 'اشترِ الآن';
 
   @override
   String get outOfStock => 'غير متوفر';
@@ -75,13 +75,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get emptyCart => 'السلة فارغة';
 
   @override
-  String get totalPrice => 'الإجمالي';
+  String get totalPrice => 'السعر الإجمالي';
 
   @override
-  String get checkout => 'الدفع';
+  String get checkout => 'إتمام الشراء';
 
   @override
-  String get checkoutTitle => 'إتمام الطلب';
+  String get checkoutTitle => 'إتمام الشراء';
 
   @override
   String get shippingAddress => 'عنوان الشحن';
@@ -108,7 +108,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirmLogoutTitle => 'تأكيد تسجيل الخروج';
 
   @override
-  String get confirmLogoutDesc => 'هل أنت متأكد أنك تريد تسجيل الخروج؟';
+  String get confirmLogoutDesc => 'هل أنت متأكد من تسجيل الخروج؟';
 
   @override
   String get cancel => 'إلغاء';
@@ -117,7 +117,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ok => 'موافق';
 
   @override
-  String get success => 'تم بنجاح';
+  String get success => 'نجاح';
 
   @override
   String get error => 'خطأ';
@@ -130,4 +130,40 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get retry => 'إعادة المحاولة';
+
+  @override
+  String get nameRequired => 'الاسم مطلوب';
+
+  @override
+  String get nameTooShort => 'يجب أن يحتوي الاسم على حرفين على الأقل';
+
+  @override
+  String get enterYourEmail => 'يرجى إدخال البريد الإلكتروني';
+
+  @override
+  String get invalidEmail => 'يرجى إدخال بريد إلكتروني صحيح';
+
+  @override
+  String get enterYourPassword => 'يرجى إدخال كلمة المرور';
+
+  @override
+  String get passwordTooShort => 'يجب أن تكون كلمة المرور 6 أحرف على الأقل';
+
+  @override
+  String get phoneRequired => 'رقم الهاتف مطلوب';
+
+  @override
+  String get invalidPhone => 'يرجى إدخال رقم هاتف صحيح';
+
+  @override
+  String get titleRequired => 'العنوان مطلوب';
+
+  @override
+  String get titleTooShort => 'يجب أن يحتوي العنوان على 3 أحرف على الأقل';
+
+  @override
+  String get descriptionRequired => 'الوصف مطلوب';
+
+  @override
+  String get descriptionTooShort => 'يجب أن يحتوي الوصف على 10 أحرف على الأقل';
 }

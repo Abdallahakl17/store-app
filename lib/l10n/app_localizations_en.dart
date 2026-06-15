@@ -130,4 +130,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get retry => 'Retry';
+
+  @override
+  String get nameRequired => 'Name is required';
+
+  @override
+  String get nameTooShort => 'Name must be at least 2 characters';
+
+  @override
+  String get enterYourEmail => 'Please enter your email';
+
+  @override
+  String get invalidEmail => 'Please enter a valid email';
+
+  @override
+  String get enterYourPassword => 'Please enter your password';
+
+  @override
+  String get passwordTooShort => 'Password must be at least 6 characters';
+
+  @override
+  String get phoneRequired => 'Phone number is required';
+
+  @override
+  String get invalidPhone => 'Please enter a valid phone number';
+
+  @override
+  String get titleRequired => 'Title is required';
+
+  @override
+  String get titleTooShort => 'Title must be at least 3 characters';
+
+  @override
+  String get descriptionRequired => 'Description is required';
+
+  @override
+  String get descriptionTooShort => 'Description must be at least 10 characters';
 }
