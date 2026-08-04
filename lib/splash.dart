@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/app.dart';
-
+ import 'package:store_app/core/extensions/context_navigation.dart';
+import 'package:store_app/core/navigation/app_routes.dart';
+ 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -20,17 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (!mounted) return;
 
-    Navigator.of(context).pushReplacement(
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => const App(),
-        transitionsBuilder: (_, animation, __, child) {
-          return FadeTransition(
-            opacity: animation,
-            child: child,
-          );
-        },
-      ),
-    );
+    context.pushReplacementNamed(AppRoutes.registerView);
   }
 
   @override

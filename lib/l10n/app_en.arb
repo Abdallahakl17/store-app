@@ -64,7 +64,19 @@
   "titleTooShort": "Title must be at least 3 characters",
 
   "descriptionRequired": "Description is required",
-  "descriptionTooShort": "Description must be at least 10 characters"
+  "descriptionTooShort": "Description must be at least 10 characters",
+  
+  "fullName": "Full Name",
+  "enterFullName": "Enter your full name",
+
+  "mobileNumber": "Mobile Number",
+  "enterMobileNumber": "Enter your mobile number",
+
+  "emailAddress": "E-mail address",
+  "enterEmailAddress": "Enter your email address",
+
+  "createAccount": "Sign up"
+
 
 
 

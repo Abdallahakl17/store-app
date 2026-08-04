@@ -166,4 +166,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get descriptionTooShort => 'يجب أن يحتوي الوصف على 10 أحرف على الأقل';
+
+  @override
+  String get fullName => 'الاسم بالكامل';
+
+  @override
+  String get enterFullName => 'أدخل اسمك بالكامل';
+
+  @override
+  String get mobileNumber => 'رقم الهاتف';
+
+  @override
+  String get enterMobileNumber => 'أدخل رقم الهاتف';
+
+  @override
+  String get emailAddress => 'البريد الإلكتروني';
+
+  @override
+  String get enterEmailAddress => 'أدخل بريدك الإلكتروني';
+
+  @override
+  String get createAccount => 'إنشاء حساب';
 }

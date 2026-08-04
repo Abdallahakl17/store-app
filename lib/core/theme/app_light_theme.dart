@@ -10,7 +10,7 @@ class AppLightTheme {
 
         colorScheme: AppColorScheme.light,
 
-        scaffoldBackgroundColor: AppColorScheme.light.surface,
+        scaffoldBackgroundColor: AppColorScheme.light.primary,
 
         fontFamily: AppTextStyles.font14Regular.fontFamily,
 

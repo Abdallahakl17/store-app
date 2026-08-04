@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:store_app/core/navigation/app_routes.dart';
+import 'package:store_app/features/auth/sign_up/presentation/screens/sing_up_screen.dart';
 import 'package:store_app/splash.dart';
 
 abstract class AppRouter {
@@ -11,6 +12,16 @@ abstract class AppRouter {
       switch (name) {
         case AppRoutes.initialRoute:
           return MaterialPageRoute(builder: (_) => SplashScreen());
+        case AppRoutes.registerView:
+  return PageRouteBuilder(
+    pageBuilder: (_, __, ___) => const SignUpScreen(),
+    transitionsBuilder: (_, animation, __, child) {
+      return FadeTransition(
+        opacity: animation,
+        child: child,
+      );
+    },
+  );
         default:
           _errorRoute();
       }

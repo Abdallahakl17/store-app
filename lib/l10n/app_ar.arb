@@ -67,7 +67,21 @@
 
   "titleRequired": "العنوان مطلوب",
   "titleTooShort": "يجب أن يحتوي العنوان على 3 أحرف على الأقل",
+"descriptionRequired": "الوصف مطلوب",
+"descriptionTooShort": "يجب أن يحتوي الوصف على 10 أحرف على الأقل",
 
-  "descriptionRequired": "الوصف مطلوب",
-  "descriptionTooShort": "يجب أن يحتوي الوصف على 10 أحرف على الأقل"
+"fullName": "الاسم بالكامل",
+"enterFullName": "أدخل اسمك بالكامل",
+
+"mobileNumber": "رقم الهاتف",
+"enterMobileNumber": "أدخل رقم الهاتف",
+
+"emailAddress": "البريد الإلكتروني",
+"enterEmailAddress": "أدخل بريدك الإلكتروني",
+
+"createAccount": "إنشاء حساب"
+
+
+
+
 }

@@ -166,4 +166,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get descriptionTooShort => 'Description must be at least 10 characters';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get enterFullName => 'Enter your full name';
+
+  @override
+  String get mobileNumber => 'Mobile Number';
+
+  @override
+  String get enterMobileNumber => 'Enter your mobile number';
+
+  @override
+  String get emailAddress => 'E-mail address';
+
+  @override
+  String get enterEmailAddress => 'Enter your email address';
+
+  @override
+  String get createAccount => 'Sign up';
 }
