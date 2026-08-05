@@ -4,7 +4,9 @@
   "login": "تسجيل الدخول",
   "email": "البريد الإلكتروني",
   "password": "كلمة المرور",
-  "confirmPassword": "تأكيد كلمة المرور",
+  "confirmYourPassword": "تأكيد كلمة المرور",
+    "rePassword": " تأكيد كلمة المرور",
+
   "forgotPassword": "نسيت كلمة المرور؟",
   "signIn": "دخول",
   "signUp": "إنشاء حساب",
@@ -78,6 +80,7 @@
 
 "emailAddress": "البريد الإلكتروني",
 "enterEmailAddress": "أدخل بريدك الإلكتروني",
+  "enterpassword": " أدخل كلمة السر",
 
 "createAccount": "إنشاء حساب"
 

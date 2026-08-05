@@ -4,6 +4,9 @@
   "login": "Login",
   "email": "Email",
   "password": "Password",
+  "rePassword": "confirm Password",
+    "confirmYourPassword": "confirm your Password",
+
   "forgotPassword": "Forgot Password?",
   "signIn": "Sign In",
   "signUp": "Sign Up",
@@ -74,6 +77,7 @@
 
   "emailAddress": "E-mail address",
   "enterEmailAddress": "Enter your email address",
+  "enterpassword": "Enter your password  ",
 
   "createAccount": "Sign up"
 

@@ -119,6 +119,18 @@ abstract class AppLocalizations {
   /// **'Password'**
   String get password;
 
+  /// No description provided for @rePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'confirm Password'**
+  String get rePassword;
+
+  /// No description provided for @confirmYourPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'confirm your Password'**
+  String get confirmYourPassword;
+
   /// No description provided for @forgotPassword.
   ///
   /// In en, this message translates to:
@@ -448,6 +460,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter your email address'**
   String get enterEmailAddress;
+
+  /// No description provided for @enterpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password  '**
+  String get enterpassword;
 
   /// No description provided for @createAccount.
   ///

@@ -21,6 +21,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
+  String get rePassword => 'confirm Password';
+
+  @override
+  String get confirmYourPassword => 'confirm your Password';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -184,6 +190,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterEmailAddress => 'Enter your email address';
+
+  @override
+  String get enterpassword => 'Enter your password  ';
 
   @override
   String get createAccount => 'Sign up';

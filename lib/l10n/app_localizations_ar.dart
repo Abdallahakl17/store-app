@@ -21,6 +21,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get password => 'كلمة المرور';
 
   @override
+  String get rePassword => ' تأكيد كلمة المرور';
+
+  @override
+  String get confirmYourPassword => 'تأكيد كلمة المرور';
+
+  @override
   String get forgotPassword => 'نسيت كلمة المرور؟';
 
   @override
@@ -184,6 +190,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterEmailAddress => 'أدخل بريدك الإلكتروني';
+
+  @override
+  String get enterpassword => ' أدخل كلمة السر';
 
   @override
   String get createAccount => 'إنشاء حساب';
