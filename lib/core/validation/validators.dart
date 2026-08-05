@@ -86,7 +86,24 @@ class Validators {
 
     return null;
   }
+static String? validateConfirmPassword(
+  BuildContext context,
+  String? value,
+  String password,
+) {
+  final l10n = AppLocalizations.of(context)!;
+  final trimmedValue = value?.trim();
 
+  if (trimmedValue == null || trimmedValue.isEmpty) {
+    return l10n.enterConfirmPassword;
+  }
+
+  if (trimmedValue != password.trim()) {
+    return l10n.passwordsDoNotMatch;
+  }
+
+  return null;
+}
   static String? validatePhone(BuildContext context, String? value) {
     final l10n = AppLocalizations.of(context)!;
     final trimmedValue = value?.trim();

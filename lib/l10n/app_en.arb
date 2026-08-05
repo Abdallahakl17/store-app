@@ -79,9 +79,9 @@
   "enterEmailAddress": "Enter your email address",
   "enterpassword": "Enter your password  ",
 
-  "createAccount": "Sign up"
-
-
+   "createAccount": "Sign up",
+   "enterConfirmPassword": "Please confirm your password",
+  "passwordsDoNotMatch": "Passwords do not match" 
 
 
 }

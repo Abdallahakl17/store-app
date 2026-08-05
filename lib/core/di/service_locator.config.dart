@@ -25,6 +25,8 @@ import '../../features/auth/sign_up/domain/repositories/sign_up_repository.dart'
     as _i812;
 import '../../features/auth/sign_up/domain/usecases/signup_use_case.dart'
     as _i854;
+import '../../features/auth/sign_up/presentation/cubit/signup_cubit.dart'
+    as _i490;
 import '../network/api_service.dart' as _i921;
 import '../network/auth_interceptor.dart' as _i908;
 import '../services/token_storage_service.dart' as _i474;
@@ -64,6 +66,8 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.factory<_i854.SignupUseCase>(
         () => _i854.SignupUseCase(gh<_i812.SignUpRepository>()));
+    gh.factory<_i490.SignupCubit>(
+        () => _i490.SignupCubit(gh<_i854.SignupUseCase>()));
     return this;
   }
 }
