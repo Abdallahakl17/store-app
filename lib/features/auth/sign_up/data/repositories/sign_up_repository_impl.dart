@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/dio_exception_mapper.dart';
 import 'package:store_app/core/error/error_mapper.dart';
 import 'package:store_app/core/error/exceptions/app_exception.dart';
 import 'package:store_app/core/error/failures/failures.dart';
@@ -19,18 +21,24 @@ class SignUpRepositoryImpl implements SignUpRepository {
     this.tokenStorage,
   );
 
-  @override
-  Future<Either<Failure, UserEntity>> signUp(
-    SignupRequestModel request,
-  ) async {
-    try {
-      final response = await remoteDataSource.signUp(request);
+ @override
+Future<Either<Failure, UserEntity>> signUp(
+  SignupRequestModel request,
+) async {
+  try {
+    final response = await remoteDataSource.signUp(request);
 
-      await tokenStorage.saveToken(response.token);
+    await tokenStorage.saveToken(response.token);
 
-      return Right(response.user);
-    } on AppException catch (e) {
-      return Left(ErrorMapper.map(e));
-    }
+    return Right(response.user);
+  } on AppException catch (e) {
+    return Left(ErrorMapper.map(e));
+  } on DioException catch (e) {
+    return Left(
+      ErrorMapper.map(
+        DioExceptionMapper.map(e),
+      ),
+    );
   }
+}
 }

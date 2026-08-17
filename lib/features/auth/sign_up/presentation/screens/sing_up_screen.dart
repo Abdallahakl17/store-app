@@ -30,6 +30,7 @@ class SignUpScreen extends HookWidget {
     final nameFocus = useFocusNode();
     final emailFocus = useFocusNode();
     final passwordFocus = useFocusNode();
+    final rePasswordFocus = useFocusNode();
     final phoneFocus = useFocusNode();
     return BlocConsumer<SignupCubit, SignupState>(
         builder: (BuildContext context, state) {
@@ -59,8 +60,12 @@ class SignUpScreen extends HookWidget {
                       ),
                     ),
                     CustomTextField(
+                      textInputAction: TextInputAction.next,
                       controller: nameController,
                       focusNode: nameFocus,
+                      onFieldSubmitted: (_) {
+                        FocusScope.of(context).requestFocus(phoneFocus);
+                      },
                       validator: (value) =>
                           Validators.validateName(context, value),
                       hintText: context.tr.enterFullName,
@@ -73,10 +78,16 @@ class SignUpScreen extends HookWidget {
                       ),
                     ),
                     CustomTextField(
+                      textInputAction: TextInputAction.next,
+                      focusNode: phoneFocus,
+                      keyboardType: TextInputType.phone,
                       validator: (value) =>
                           Validators.validatePhone(context, value),
                       controller: phoneController,
                       hintText: context.tr.enterMobileNumber,
+                      onFieldSubmitted: (_) {
+                        FocusScope.of(context).requestFocus(emailFocus);
+                      },
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 24.h),
@@ -86,6 +97,12 @@ class SignUpScreen extends HookWidget {
                       ),
                     ),
                     CustomTextField(
+                      textInputAction: TextInputAction.next,
+                      focusNode: emailFocus,
+                      onFieldSubmitted: (_) {
+                        FocusScope.of(context).requestFocus(passwordFocus);
+                      },
+                      keyboardType: TextInputType.emailAddress,
                       validator: (value) =>
                           Validators.validateEmail(context, value),
                       controller: emailController,
@@ -99,6 +116,11 @@ class SignUpScreen extends HookWidget {
                       ),
                     ),
                     CustomTextField(
+                      focusNode: passwordFocus,
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) {
+                        FocusScope.of(context).requestFocus(rePasswordFocus);
+                      },
                       validator: (value) =>
                           Validators.validatePassword(context, value),
                       controller: passwordController,
@@ -120,28 +142,36 @@ class SignUpScreen extends HookWidget {
                       ),
                     ),
                     CustomTextField(
+                      controller: repasswordController,
+                      focusNode: rePasswordFocus,
+                      textInputAction: TextInputAction.done,
+                      onFieldSubmitted: (_) {
+                        FocusScope.of(context).unfocus();
+                      },
                       validator: (value) => Validators.validateConfirmPassword(
                         context,
                         value,
                         passwordController.text,
                       ),
                       obscureText: isRePasswordHidden.value,
-                      controller: repasswordController,
                       hintText: context.tr.confirmYourPassword,
                       suffixIcon: IconButton(
-                          onPressed: () {
-                            isRePasswordHidden.value =
-                                !isRePasswordHidden.value;
-                          },
-                          icon: Icon(isRePasswordHidden.value
+                        onPressed: () {
+                          isRePasswordHidden.value = !isRePasswordHidden.value;
+                        },
+                        icon: Icon(
+                          isRePasswordHidden.value
                               ? Icons.visibility_off
-                              : Icons.visibility)),
+                              : Icons.visibility,
+                        ),
+                      ),
                     ),
                     SizedBox(
                       height: 56.h,
                     ),
                     AppButton(
                       text: context.tr.signUp,
+                      isLoading: state is SignupLoading,
                       onPressed: () {
                         if (!formKey.currentState!.validate()) return;
 

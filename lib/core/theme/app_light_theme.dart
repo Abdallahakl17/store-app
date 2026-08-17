@@ -77,11 +77,13 @@ class AppLightTheme {
             ),
           ),
           errorBorder: OutlineInputBorder(
+            borderRadius: AppRadius.mdAll,
             borderSide: BorderSide(
               color: AppColorScheme.light.error,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
+            borderRadius: AppRadius.mdAll,
             borderSide: BorderSide(
               color: AppColorScheme.light.error,
               width: 1,
