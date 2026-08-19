@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store_app/core/di/service_locator.dart';
 import 'package:store_app/core/navigation/app_routes.dart';
+import 'package:store_app/features/auth/sign_in/presentation/screens/sign_in_screen.dart';
 import 'package:store_app/features/auth/sign_up/presentation/cubit/signup_cubit.dart';
 import 'package:store_app/features/auth/sign_up/presentation/screens/sing_up_screen.dart';
 import 'package:store_app/splash.dart';
@@ -15,19 +16,21 @@ abstract class AppRouter {
       switch (name) {
         case AppRoutes.initialRoute:
           return MaterialPageRoute(builder: (_) => SplashScreen());
-       case AppRoutes.registerView:
-  return PageRouteBuilder(
-    pageBuilder: (_, __, ___) => BlocProvider(
-      create: (_) => getIt<SignupCubit>(),
-      child: const SignUpScreen(),
-    ),
-    transitionsBuilder: (_, animation, __, child) {
-      return FadeTransition(
-        opacity: animation,
-        child: child,
-      );
-    },
-  );
+        case AppRoutes.registerView:
+          return PageRouteBuilder(
+            pageBuilder: (_, __, ___) => BlocProvider(
+              create: (_) => getIt<SignupCubit>(),
+              child: const SignUpScreen(),
+            ),
+            transitionsBuilder: (_, animation, __, child) {
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
+            },
+          );
+        case AppRoutes.loginView:
+          return MaterialPageRoute(builder: (_) => SignInScreen());
         default:
           _errorRoute();
       }

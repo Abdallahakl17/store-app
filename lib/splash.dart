@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
- import 'package:store_app/core/extensions/context_navigation.dart';
+import 'package:store_app/core/extensions/context_navigation.dart';
 import 'package:store_app/core/navigation/app_routes.dart';
- 
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (!mounted) return;
 
-    context.pushReplacementNamed(AppRoutes.registerView);
+    context.pushReplacementNamed(AppRoutes.loginView);
   }
 
   @override

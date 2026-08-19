@@ -1,46 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class AppSpacing {
-  /// Base unit = 4
+  static double get xs => 4.w;
+  static double get sm => 8.w;
+  static double get md => 12.w;
+  static double get lg => 16.w;
+  static double get xl => 24.w;
+  static double get xxl => 32.w;
 
-  static const double xs = 4;
-  static const double sm = 8;
-  static const double md = 12;
-  static const double lg = 16;
-  static const double xl = 24;
-  static const double xxl = 32;
+  // ALL
+  static EdgeInsets get xsAll => EdgeInsets.all(xs);
+  static EdgeInsets get smAll => EdgeInsets.all(sm);
+  static EdgeInsets get mdAll => EdgeInsets.all(md);
+  static EdgeInsets get lgAll => EdgeInsets.all(lg);
+  static EdgeInsets get xlAll => EdgeInsets.all(xl);
+  static EdgeInsets get xxlAll => EdgeInsets.all(xxl);
 
-  /// ALL
-  static const EdgeInsets xsAll = EdgeInsets.all(xs);
-  static const EdgeInsets smAll = EdgeInsets.all(sm);
-  static const EdgeInsets mdAll = EdgeInsets.all(md);
-  static const EdgeInsets lgAll = EdgeInsets.all(lg);
-  static const EdgeInsets xlAll = EdgeInsets.all(xl);
-  static const EdgeInsets xxlAll = EdgeInsets.all(xxl);
+  // HORIZONTAL
+  static EdgeInsets get xsHorizontal =>
+      EdgeInsets.symmetric(horizontal: xs);
 
-  /// HORIZONTAL
-  static const EdgeInsets smHorizontal =
+  static EdgeInsets get smHorizontal =>
       EdgeInsets.symmetric(horizontal: sm);
 
-  static const EdgeInsets mdHorizontal =
+  static EdgeInsets get mdHorizontal =>
       EdgeInsets.symmetric(horizontal: md);
 
-  static const EdgeInsets lgHorizontal =
+  static EdgeInsets get lgHorizontal =>
       EdgeInsets.symmetric(horizontal: lg);
 
-  static const EdgeInsets xlHorizontal =
+  static EdgeInsets get xlHorizontal =>
       EdgeInsets.symmetric(horizontal: xl);
 
-  /// VERTICAL
-  static const EdgeInsets smVertical =
+  static EdgeInsets get xxlHorizontal =>
+      EdgeInsets.symmetric(horizontal: xxl);
+
+  // VERTICAL
+  static EdgeInsets get xsVertical =>
+      EdgeInsets.symmetric(vertical: xs);
+
+  static EdgeInsets get smVertical =>
       EdgeInsets.symmetric(vertical: sm);
 
-  static const EdgeInsets mdVertical =
+  static EdgeInsets get mdVertical =>
       EdgeInsets.symmetric(vertical: md);
 
-  static const EdgeInsets lgVertical =
+  static EdgeInsets get lgVertical =>
       EdgeInsets.symmetric(vertical: lg);
 
-  static const EdgeInsets xlVertical =
+  static EdgeInsets get xlVertical =>
       EdgeInsets.symmetric(vertical: xl);
+
+  static EdgeInsets get xxlVertical =>
+      EdgeInsets.symmetric(vertical: xxl);
 }
