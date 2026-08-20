@@ -8,7 +8,7 @@ import 'package:store_app/core/error/failures/failures.dart';
 import 'package:store_app/core/services/token_storage_service.dart';
 import 'package:store_app/features/auth/sign_up/data/data_sources/sign_up_remote_data_source.dart';
 import 'package:store_app/features/auth/sign_up/data/models/signup_request_model.dart';
-import 'package:store_app/features/auth/sign_up/domain/entities/user_entity.dart';
+import 'package:store_app/features/auth/shared/user_entity.dart';
 import 'package:store_app/features/auth/sign_up/domain/repositories/sign_up_repository.dart';
 
 @LazySingleton(as: SignUpRepository)

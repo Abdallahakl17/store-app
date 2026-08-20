@@ -3,7 +3,7 @@ import 'package:store_app/core/network/api_end_points.dart';
 import 'package:store_app/core/network/api_service.dart';
 import 'package:store_app/features/auth/sign_up/data/data_sources/sign_up_remote_data_source.dart';
 import 'package:store_app/features/auth/sign_up/data/models/signup_request_model.dart';
-import 'package:store_app/features/auth/sign_up/data/models/signup_response_model.dart';
+import 'package:store_app/features/auth/shared/auth_response_model.dart';
 @LazySingleton(as: SignUpRemoteDataSource)
 class SignUpRemoteDataSourceImpl
     implements SignUpRemoteDataSource {
@@ -13,7 +13,7 @@ class SignUpRemoteDataSourceImpl
   const SignUpRemoteDataSourceImpl(this.apiService);
 
   @override
-  Future<SignupResponseModel> signUp(
+  Future<AuthResponseModel> signUp(
     SignupRequestModel request,
   ) async {
     final response = await apiService.post(
@@ -21,6 +21,6 @@ class SignUpRemoteDataSourceImpl
       data: request.toJson(),
     );
 
-    return SignupResponseModel.fromJson(response.data);
+    return AuthResponseModel.fromJson(response.data);
   }
 }

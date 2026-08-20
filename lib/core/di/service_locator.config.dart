@@ -15,6 +15,18 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart' as _i162;
 
+import '../../features/auth/sign_in/data/data_source/sign_in_remote_data_source.dart'
+    as _i820;
+import '../../features/auth/sign_in/data/data_source/sign_in_remote_data_source_impl.dart'
+    as _i1002;
+import '../../features/auth/sign_in/data/repository/sign_inrepository_impl.dart'
+    as _i91;
+import '../../features/auth/sign_in/domain/repository/sign_in_repository.dart'
+    as _i17;
+import '../../features/auth/sign_in/domain/usecase/signin_use_cae.dart'
+    as _i705;
+import '../../features/auth/sign_in/presentation/cubit/sign_in_cubit.dart'
+    as _i1026;
 import '../../features/auth/sign_up/data/data_sources/sign_up_remote_data_source.dart'
     as _i897;
 import '../../features/auth/sign_up/data/data_sources/sign_up_remote_data_source_impl.dart'
@@ -58,14 +70,24 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i162.TalkerDioLogger>(),
         ));
     gh.lazySingleton<_i921.ApiService>(() => _i921.ApiService(gh<_i361.Dio>()));
+    gh.factory<_i820.SignInRemoteDataSource>(
+        () => _i1002.SignInRemoteDataSourceImpl(gh<_i921.ApiService>()));
     gh.lazySingleton<_i897.SignUpRemoteDataSource>(
         () => _i807.SignUpRemoteDataSourceImpl(gh<_i921.ApiService>()));
+    gh.lazySingleton<_i17.SignInRepository>(() => _i91.SignInRepositoryImpl(
+          gh<_i820.SignInRemoteDataSource>(),
+          gh<_i474.TokenStorageService>(),
+        ));
     gh.lazySingleton<_i812.SignUpRepository>(() => _i442.SignUpRepositoryImpl(
           gh<_i897.SignUpRemoteDataSource>(),
           gh<_i474.TokenStorageService>(),
         ));
     gh.factory<_i854.SignupUseCase>(
         () => _i854.SignupUseCase(gh<_i812.SignUpRepository>()));
+    gh.factory<_i705.SignInUseCase>(
+        () => _i705.SignInUseCase(gh<_i17.SignInRepository>()));
+    gh.factory<_i1026.SignInCubit>(
+        () => _i1026.SignInCubit(gh<_i705.SignInUseCase>()));
     gh.factory<_i490.SignupCubit>(
         () => _i490.SignupCubit(gh<_i854.SignupUseCase>()));
     return this;

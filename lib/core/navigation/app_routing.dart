@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store_app/core/di/service_locator.dart';
 import 'package:store_app/core/navigation/app_routes.dart';
+import 'package:store_app/features/auth/sign_in/presentation/cubit/sign_in_cubit.dart';
 import 'package:store_app/features/auth/sign_in/presentation/screens/sign_in_screen.dart';
 import 'package:store_app/features/auth/sign_up/presentation/cubit/signup_cubit.dart';
 import 'package:store_app/features/auth/sign_up/presentation/screens/sing_up_screen.dart';
@@ -30,7 +31,11 @@ abstract class AppRouter {
             },
           );
         case AppRoutes.loginView:
-          return MaterialPageRoute(builder: (_) => SignInScreen());
+          return MaterialPageRoute(
+              builder: (_) => BlocProvider(
+                    create: (_) => getIt<SignInCubit>(),
+                    child: const SignInScreen(),
+                  ));
         default:
           _errorRoute();
       }

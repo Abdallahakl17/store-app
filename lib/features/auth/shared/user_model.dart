@@ -1,4 +1,4 @@
-import 'package:store_app/features/auth/sign_up/domain/entities/user_entity.dart';
+import 'package:store_app/features/auth/shared/user_entity.dart';
 
 class UserModel extends UserEntity {
   const UserModel(
