@@ -1,3 +1,4 @@
+import 'package:store_app/core/error/failures/failures.dart';
 import 'package:store_app/features/auth/shared/user_entity.dart';
 
 sealed class SignupState {
@@ -19,7 +20,7 @@ final class SignupSuccess extends SignupState {
 }
 
 final class SignupFailure extends SignupState {
-  final String message;
+  final Failure failure;
 
-  const SignupFailure(this.message);
+  const SignupFailure(this.failure);
 }

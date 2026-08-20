@@ -208,10 +208,10 @@ class SignUpScreen extends HookWidget {
           );
           break;
 
-        case SignupFailure(message: final message):
+        case SignupFailure(failure: final message):
           DialogUtils.showSnackBar(
             context,
-            message,
+            message.message,
             backgroundColor: context.colorScheme.error,
           );
           break;
