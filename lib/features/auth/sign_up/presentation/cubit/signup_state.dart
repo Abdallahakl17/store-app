@@ -22,5 +22,6 @@ final class SignupSuccess extends SignupState {
 final class SignupFailure extends SignupState {
   final Failure failure;
 
-  const SignupFailure(this.failure);
+  const SignupFailure(this.failure
+  );
 }
