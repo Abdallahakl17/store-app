@@ -443,11 +443,23 @@ abstract class AppLocalizations {
   /// **'Mobile Number'**
   String get mobileNumber;
 
+  /// No description provided for @sendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Code'**
+  String get sendCode;
+
   /// No description provided for @enterMobileNumber.
   ///
   /// In en, this message translates to:
   /// **'Enter your mobile number'**
   String get enterMobileNumber;
+
+  /// No description provided for @forgotPasswordDontWorry.
+  ///
+  /// In en, this message translates to:
+  /// **'Don’t worry, it happens to the best of us.'**
+  String get forgotPasswordDontWorry;
 
   /// No description provided for @emailAddress.
   ///

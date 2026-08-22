@@ -15,6 +15,18 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart' as _i162;
 
+import '../../features/auth/reset_password/data/data_sources/forgot_password_remote_data_source.dart'
+    as _i904;
+import '../../features/auth/reset_password/data/data_sources/forgot_password_remote_data_source_impl.dart'
+    as _i620;
+import '../../features/auth/reset_password/data/repository/sign_inrepository_impl.dart'
+    as _i250;
+import '../../features/auth/reset_password/domain/repositories/forgot_password_repository.dart'
+    as _i856;
+import '../../features/auth/reset_password/domain/use_cases/forgot_password_use_case.dart'
+    as _i732;
+import '../../features/auth/reset_password/presentation/cubit/forgot_password_cubit.dart'
+    as _i446;
 import '../../features/auth/sign_in/data/data_source/sign_in_remote_data_source.dart'
     as _i820;
 import '../../features/auth/sign_in/data/data_source/sign_in_remote_data_source_impl.dart'
@@ -70,10 +82,12 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i162.TalkerDioLogger>(),
         ));
     gh.lazySingleton<_i921.ApiService>(() => _i921.ApiService(gh<_i361.Dio>()));
-    gh.factory<_i820.SignInRemoteDataSource>(
+    gh.lazySingleton<_i820.SignInRemoteDataSource>(
         () => _i1002.SignInRemoteDataSourceImpl(gh<_i921.ApiService>()));
     gh.lazySingleton<_i897.SignUpRemoteDataSource>(
         () => _i807.SignUpRemoteDataSourceImpl(gh<_i921.ApiService>()));
+    gh.lazySingleton<_i904.ForgotPasswordRemoteDataSource>(
+        () => _i620.ForgotPasswordRemoteDataSourceImpl(gh<_i921.ApiService>()));
     gh.lazySingleton<_i17.SignInRepository>(() => _i91.SignInRepositoryImpl(
           gh<_i820.SignInRemoteDataSource>(),
           gh<_i474.TokenStorageService>(),
@@ -82,14 +96,21 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i897.SignUpRemoteDataSource>(),
           gh<_i474.TokenStorageService>(),
         ));
+    gh.lazySingleton<_i856.ForgotPasswordRepository>(() =>
+        _i250.ForgotPasswordRepositoryImpl(
+            gh<_i904.ForgotPasswordRemoteDataSource>()));
     gh.factory<_i854.SignupUseCase>(
         () => _i854.SignupUseCase(gh<_i812.SignUpRepository>()));
     gh.factory<_i705.SignInUseCase>(
         () => _i705.SignInUseCase(gh<_i17.SignInRepository>()));
+    gh.lazySingleton<_i732.ForgotPasswordUseCase>(() =>
+        _i732.ForgotPasswordUseCase(gh<_i856.ForgotPasswordRepository>()));
     gh.factory<_i1026.SignInCubit>(
         () => _i1026.SignInCubit(gh<_i705.SignInUseCase>()));
     gh.factory<_i490.SignupCubit>(
         () => _i490.SignupCubit(gh<_i854.SignupUseCase>()));
+    gh.factory<_i446.ForgotPasswordCubit>(
+        () => _i446.ForgotPasswordCubit(gh<_i732.ForgotPasswordUseCase>()));
     return this;
   }
 }

@@ -66,6 +66,7 @@
 
   "phoneRequired": "رقم الهاتف مطلوب",
   "invalidPhone": "يرجى إدخال رقم هاتف صحيح",
+  "sendCode": " أرسل الكود",
 
   "titleRequired": "العنوان مطلوب",
   "titleTooShort": "يجب أن يحتوي العنوان على 3 أحرف على الأقل",
@@ -77,7 +78,7 @@
 
 "mobileNumber": "رقم الهاتف",
 "enterMobileNumber": "أدخل رقم الهاتف",
-
+"forgotPasswordDontWorry": "لا تقلق، هذا الأمر يحدث للجميع.",
 "emailAddress": "البريد الإلكتروني",
 "enterEmailAddress": "أدخل بريدك الإلكتروني",
   "enterpassword": " أدخل كلمة السر",

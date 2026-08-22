@@ -73,8 +73,9 @@
   "enterFullName": "Enter your full name",
 
   "mobileNumber": "Mobile Number",
+  "sendCode": "Send Code",
   "enterMobileNumber": "Enter your mobile number",
-
+"forgotPasswordDontWorry": "Don’t worry, it happens to the best of us.",
   "emailAddress": "E-mail address",
   "enterEmailAddress": "Enter your email address",
   "enterpassword": "Enter your password  ",

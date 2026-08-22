@@ -183,7 +183,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mobileNumber => 'Mobile Number';
 
   @override
+  String get sendCode => 'Send Code';
+
+  @override
   String get enterMobileNumber => 'Enter your mobile number';
+
+  @override
+  String get forgotPasswordDontWorry => 'Don’t worry, it happens to the best of us.';
 
   @override
   String get emailAddress => 'E-mail address';

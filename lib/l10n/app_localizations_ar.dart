@@ -183,7 +183,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get mobileNumber => 'رقم الهاتف';
 
   @override
+  String get sendCode => ' أرسل الكود';
+
+  @override
   String get enterMobileNumber => 'أدخل رقم الهاتف';
+
+  @override
+  String get forgotPasswordDontWorry => 'لا تقلق، هذا الأمر يحدث للجميع.';
 
   @override
   String get emailAddress => 'البريد الإلكتروني';

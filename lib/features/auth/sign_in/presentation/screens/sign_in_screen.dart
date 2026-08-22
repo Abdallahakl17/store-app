@@ -6,6 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/assets/app_assets.dart';
 import 'package:store_app/core/extensions/context_config.dart';
 import 'package:store_app/core/extensions/context_localization.dart';
+import 'package:store_app/core/extensions/context_navigation.dart';
+import 'package:store_app/core/navigation/app_routes.dart';
 import 'package:store_app/core/theme/app_spacing.dart';
 import 'package:store_app/core/utils/dialogs.dart';
 import 'package:store_app/core/validation/validators.dart';
@@ -141,7 +143,7 @@ class SignInScreen extends HookWidget {
                         alignment: AlignmentDirectional.centerEnd,
                         child: TextButton(
                           onPressed: () {
-                            // TODO: Forgot Password
+                            context.pushNamed(AppRoutes.forgetPasswordView);
                           },
                           child: Text(
                             context.tr.forgotPassword,
