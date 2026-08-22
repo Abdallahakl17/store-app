@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (!mounted) return;
 
-    context.pushReplacementNamed(AppRoutes.registerView);
+    context.pushReplacementNamed(AppRoutes.loginView);
   }
 
   @override
