@@ -180,6 +180,18 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enterFullName => 'أدخل اسمك بالكامل';
 
   @override
+  String get checkYourMail => 'تحقق من بريدك الإلكتروني';
+
+  @override
+  String get checkYourMailDescription => 'لقد أرسلنا رمز التحقق إلى بريدك الإلكتروني. تحقق من صندوق الوارد وأدخل الرمز أدناه.';
+
+  @override
+  String get didntReceiveCode => 'لم يصلك الرمز؟';
+
+  @override
+  String get resendCode => 'إعادة إرسال الرمز';
+
+  @override
   String get mobileNumber => 'رقم الهاتف';
 
   @override
@@ -199,6 +211,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterpassword => ' أدخل كلمة السر';
+
+  @override
+  String get verifyCode => 'تحقق من الرمز';
 
   @override
   String get createAccount => 'إنشاء حساب';

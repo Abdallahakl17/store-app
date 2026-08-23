@@ -51,6 +51,18 @@ import '../../features/auth/sign_up/domain/usecases/signup_use_case.dart'
     as _i854;
 import '../../features/auth/sign_up/presentation/cubit/signup_cubit.dart'
     as _i490;
+import '../../features/auth/verify_code/data/data_sources/verify_reset_code_remote_data_source.dart'
+    as _i169;
+import '../../features/auth/verify_code/data/data_sources/verify_reset_code_remote_data_source_impl.dart'
+    as _i289;
+import '../../features/auth/verify_code/data/repositories/verify_reset_code_repository_impl.dart'
+    as _i689;
+import '../../features/auth/verify_code/domain/repositories/verify_reset_code_repository.dart'
+    as _i131;
+import '../../features/auth/verify_code/domain/use_cases/verify_reset_code_use_case.dart'
+    as _i647;
+import '../../features/auth/verify_code/presentation/cubit/verify_reset_code_cubit.dart'
+    as _i482;
 import '../network/api_service.dart' as _i921;
 import '../network/auth_interceptor.dart' as _i908;
 import '../services/token_storage_service.dart' as _i474;
@@ -82,6 +94,8 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i162.TalkerDioLogger>(),
         ));
     gh.lazySingleton<_i921.ApiService>(() => _i921.ApiService(gh<_i361.Dio>()));
+    gh.lazySingleton<_i169.VerifyResetCodeRemoteDataSource>(() =>
+        _i289.VerifyResetCodeRemoteDataSourceImpl(gh<_i921.ApiService>()));
     gh.lazySingleton<_i820.SignInRemoteDataSource>(
         () => _i1002.SignInRemoteDataSourceImpl(gh<_i921.ApiService>()));
     gh.lazySingleton<_i897.SignUpRemoteDataSource>(
@@ -96,6 +110,9 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i897.SignUpRemoteDataSource>(),
           gh<_i474.TokenStorageService>(),
         ));
+    gh.lazySingleton<_i131.VerifyResetCodeRepository>(() =>
+        _i689.VerifyResetCodeRepositoryImpl(
+            gh<_i169.VerifyResetCodeRemoteDataSource>()));
     gh.lazySingleton<_i856.ForgotPasswordRepository>(() =>
         _i250.ForgotPasswordRepositoryImpl(
             gh<_i904.ForgotPasswordRemoteDataSource>()));
@@ -105,12 +122,16 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i705.SignInUseCase(gh<_i17.SignInRepository>()));
     gh.lazySingleton<_i732.ForgotPasswordUseCase>(() =>
         _i732.ForgotPasswordUseCase(gh<_i856.ForgotPasswordRepository>()));
+    gh.lazySingleton<_i647.VerifyResetCodeUseCase>(() =>
+        _i647.VerifyResetCodeUseCase(gh<_i131.VerifyResetCodeRepository>()));
     gh.factory<_i1026.SignInCubit>(
         () => _i1026.SignInCubit(gh<_i705.SignInUseCase>()));
     gh.factory<_i490.SignupCubit>(
         () => _i490.SignupCubit(gh<_i854.SignupUseCase>()));
     gh.factory<_i446.ForgotPasswordCubit>(
         () => _i446.ForgotPasswordCubit(gh<_i732.ForgotPasswordUseCase>()));
+    gh.factory<_i482.VerifyResetCodeCubit>(
+        () => _i482.VerifyResetCodeCubit(gh<_i647.VerifyResetCodeUseCase>()));
     return this;
   }
 }

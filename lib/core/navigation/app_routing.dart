@@ -10,6 +10,8 @@ import 'package:store_app/features/auth/sign_in/presentation/cubit/sign_in_cubit
 import 'package:store_app/features/auth/sign_in/presentation/screens/sign_in_screen.dart';
 import 'package:store_app/features/auth/sign_up/presentation/cubit/signup_cubit.dart';
 import 'package:store_app/features/auth/sign_up/presentation/screens/sing_up_screen.dart';
+import 'package:store_app/features/auth/verify_code/presentation/cubit/verify_reset_code_cubit.dart';
+import 'package:store_app/features/auth/verify_code/presentation/screen/verify_reset_code_screen.dart';
 import 'package:store_app/splash.dart';
 
 abstract class AppRouter {
@@ -39,10 +41,29 @@ abstract class AppRouter {
                     child: const SignInScreen(),
                   ));
         case AppRoutes.forgetPasswordView:
-          return MaterialPageRoute(builder: (_) => BlocProvider(
-            create: (_)=>getIt<ForgotPasswordCubit>(),
-            
-            child: ResetPasswordScreen()));
+          return MaterialPageRoute(
+              builder: (_) => BlocProvider(
+                  create: (_) => getIt<ForgotPasswordCubit>(),
+                  child: ResetPasswordScreen()));
+      case AppRoutes.verifyView:
+  final email = routeSettings.arguments as String;
+
+  return MaterialPageRoute(
+    builder: (_) => MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => getIt<VerifyResetCodeCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => getIt<ForgotPasswordCubit>(),
+        ),
+      ],
+      child: VerifyResetCodeScreen(
+        email: email,
+      ),
+    ),
+  );
+
         default:
           _errorRoute();
       }

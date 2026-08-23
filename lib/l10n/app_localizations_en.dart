@@ -180,6 +180,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterFullName => 'Enter your full name';
 
   @override
+  String get checkYourMail => 'Check Your Mail';
+
+  @override
+  String get checkYourMailDescription => 'We’ve sent a verification code to your email. Check your inbox and enter the code below.';
+
+  @override
+  String get didntReceiveCode => 'Didn\'t receive the code?';
+
+  @override
+  String get resendCode => 'Resend Code';
+
+  @override
   String get mobileNumber => 'Mobile Number';
 
   @override
@@ -199,6 +211,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterpassword => 'Enter your password  ';
+
+  @override
+  String get verifyCode => 'Verify Code';
 
   @override
   String get createAccount => 'Sign up';

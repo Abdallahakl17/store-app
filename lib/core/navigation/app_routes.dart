@@ -5,6 +5,7 @@ abstract class AppRoutes {
    static const registerView = 'registerView';
   static const forgetPasswordView = 'forgetPasswordView';
   static const mainView = 'mainView';
+  static const verifyView = 'verifyView';
   static const homeView = 'homeView';
   static const detailsView = 'detailsView';
   static const categoryMoviesView = 'categoryMoviesView';

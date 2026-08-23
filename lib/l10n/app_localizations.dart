@@ -437,6 +437,30 @@ abstract class AppLocalizations {
   /// **'Enter your full name'**
   String get enterFullName;
 
+  /// No description provided for @checkYourMail.
+  ///
+  /// In en, this message translates to:
+  /// **'Check Your Mail'**
+  String get checkYourMail;
+
+  /// No description provided for @checkYourMailDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'We’ve sent a verification code to your email. Check your inbox and enter the code below.'**
+  String get checkYourMailDescription;
+
+  /// No description provided for @didntReceiveCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t receive the code?'**
+  String get didntReceiveCode;
+
+  /// No description provided for @resendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend Code'**
+  String get resendCode;
+
   /// No description provided for @mobileNumber.
   ///
   /// In en, this message translates to:
@@ -478,6 +502,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter your password  '**
   String get enterpassword;
+
+  /// No description provided for @verifyCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify Code'**
+  String get verifyCode;
 
   /// No description provided for @createAccount.
   ///

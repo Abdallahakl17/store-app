@@ -5,6 +5,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:store_app/core/assets/app_assets.dart';
 import 'package:store_app/core/extensions/context_config.dart';
 import 'package:store_app/core/extensions/context_localization.dart';
+import 'package:store_app/core/extensions/context_navigation.dart';
+import 'package:store_app/core/navigation/app_routes.dart';
 import 'package:store_app/core/theme/app_spacing.dart';
 import 'package:store_app/core/utils/dialogs.dart';
 import 'package:store_app/core/validation/validators.dart';
@@ -36,7 +38,8 @@ class ResetPasswordScreen extends HookWidget {
               message,
             );
 
-            // هنا بعدين هنروح لـ Verify Reset Code Screen
+            context.pushNamed(AppRoutes.verifyView,  arguments: emailController.text.trim(),
+);
             break;
 
           case ForgotPasswordFailure(message: final message):
@@ -67,7 +70,7 @@ class ResetPasswordScreen extends HookWidget {
                     padding: AppSpacing.xlAll,
                     child: Text(
                       context.tr.forgotPassword,
-                      style: context.textTheme.titleLarge,
+                      style: context.textTheme.titleSmall,
                     ),
                   ),
                   Text(

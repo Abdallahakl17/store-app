@@ -63,7 +63,12 @@
 
   "enterConfirmPassword": "يرجى تأكيد كلمة المرور",
   "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
-
+  "checkYourMail": "تحقق من بريدك الإلكتروني",
+"checkYourMailDescription": "لقد أرسلنا رمز التحقق إلى بريدك الإلكتروني. تحقق من صندوق الوارد وأدخل الرمز أدناه.",
+"didntReceiveCode": "لم يصلك الرمز؟",
+"resendCode": "إعادة إرسال الرمز",
+"verifyCode": "تحقق من الرمز",
+ 
   "phoneRequired": "رقم الهاتف مطلوب",
   "invalidPhone": "يرجى إدخال رقم هاتف صحيح",
   "sendCode": " أرسل الكود",

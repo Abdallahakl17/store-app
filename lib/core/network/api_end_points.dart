@@ -11,7 +11,7 @@ class ApiEndpoints {
   static const String verifyResetCode = 'auth/verifyResetCode';
   static const String resetPassword = 'auth/resetPassword';
 
-  // Categories
+  // Categories 
   static const String categories = 'categories';
 
   // Brands
