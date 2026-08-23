@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:store_app/core/network/api_end_points.dart';
 import 'package:store_app/core/network/api_service.dart';
-import 'package:store_app/features/auth/reset_password/data/data_sources/forgot_password_remote_data_source.dart';
+import 'package:store_app/features/auth/forgot_password/data/data_sources/forgot_password_remote_data_source.dart';
 
 @LazySingleton(as: ForgotPasswordRemoteDataSource)
 class ForgotPasswordRemoteDataSourceImpl

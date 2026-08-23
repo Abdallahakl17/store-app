@@ -12,7 +12,7 @@ import 'package:store_app/core/theme/app_spacing.dart';
 import 'package:store_app/core/utils/dialogs.dart';
 import 'package:store_app/core/widgets/app_button.dart';
 
-import 'package:store_app/features/auth/reset_password/presentation/cubit/forgot_password_cubit.dart';
+import 'package:store_app/features/auth/forgot_password/presentation/cubit/forgot_password_cubit.dart';
 import 'package:store_app/features/auth/verify_code/presentation/cubit/verify_reset_code_cubit.dart';
 import 'package:store_app/features/auth/verify_code/presentation/cubit/verify_reset_code_state.dart';
 

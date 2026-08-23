@@ -7,8 +7,8 @@ import 'package:store_app/core/error/error_mapper.dart';
 import 'package:store_app/core/error/exceptions/app_exception.dart';
 import 'package:store_app/core/error/failures/failures.dart';
 
-import 'package:store_app/features/auth/reset_password/data/data_sources/forgot_password_remote_data_source.dart';
-import 'package:store_app/features/auth/reset_password/domain/repositories/forgot_password_repository.dart';
+import 'package:store_app/features/auth/forgot_password/data/data_sources/forgot_password_remote_data_source.dart';
+import 'package:store_app/features/auth/forgot_password/domain/repositories/forgot_password_repository.dart';
 
 @LazySingleton(as: ForgotPasswordRepository)
 class ForgotPasswordRepositoryImpl

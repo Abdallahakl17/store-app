@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:store_app/features/auth/reset_password/domain/use_cases/forgot_password_use_case.dart';
+import 'package:store_app/features/auth/forgot_password/domain/use_cases/forgot_password_use_case.dart';
 
  import 'forgot_password_state.dart';
 

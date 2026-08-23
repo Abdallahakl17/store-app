@@ -12,8 +12,8 @@ import 'package:store_app/core/utils/dialogs.dart';
 import 'package:store_app/core/validation/validators.dart';
 import 'package:store_app/core/widgets/app_button.dart';
 import 'package:store_app/core/widgets/form.dart';
-import 'package:store_app/features/auth/reset_password/presentation/cubit/forgot_password_cubit.dart';
-import 'package:store_app/features/auth/reset_password/presentation/cubit/forgot_password_state.dart';
+import 'package:store_app/features/auth/forgot_password/presentation/cubit/forgot_password_cubit.dart';
+import 'package:store_app/features/auth/forgot_password/presentation/cubit/forgot_password_state.dart';
 
 class ResetPasswordScreen extends HookWidget {
   const ResetPasswordScreen({super.key});

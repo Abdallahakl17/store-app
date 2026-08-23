@@ -15,17 +15,17 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart' as _i162;
 
-import '../../features/auth/reset_password/data/data_sources/forgot_password_remote_data_source.dart'
+import '../../features/auth/forgot_password/data/data_sources/forgot_password_remote_data_source.dart'
     as _i904;
-import '../../features/auth/reset_password/data/data_sources/forgot_password_remote_data_source_impl.dart'
+import '../../features/auth/forgot_password/data/data_sources/forgot_password_remote_data_source_impl.dart'
     as _i620;
-import '../../features/auth/reset_password/data/repository/sign_inrepository_impl.dart'
+import '../../features/auth/forgot_password/data/repository/forgot_repository_impl.dart'
     as _i250;
-import '../../features/auth/reset_password/domain/repositories/forgot_password_repository.dart'
+import '../../features/auth/forgot_password/domain/repositories/forgot_password_repository.dart'
     as _i856;
-import '../../features/auth/reset_password/domain/use_cases/forgot_password_use_case.dart'
+import '../../features/auth/forgot_password/domain/use_cases/forgot_password_use_case.dart'
     as _i732;
-import '../../features/auth/reset_password/presentation/cubit/forgot_password_cubit.dart'
+import '../../features/auth/forgot_password/presentation/cubit/forgot_password_cubit.dart'
     as _i446;
 import '../../features/auth/sign_in/data/data_source/sign_in_remote_data_source.dart'
     as _i820;
