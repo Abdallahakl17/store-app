@@ -68,12 +68,14 @@
 "didntReceiveCode": "لم يصلك الرمز؟",
 "resendCode": "إعادة إرسال الرمز",
 "verifyCode": "تحقق من الرمز",
- 
+  "newPassword": "كلمة السر الجديدة",  
   "phoneRequired": "رقم الهاتف مطلوب",
   "invalidPhone": "يرجى إدخال رقم هاتف صحيح",
-  "sendCode": " أرسل الكود",
-
-  "titleRequired": "العنوان مطلوب",
+  "sendCode": " أرسل الكود", 
+  "resetPassword":"إعادة تعيين كلمة المرور",
+  "enterNewPassword"  :"أدخل كلمة المرور الجديدة أدناه لإعادة تعيين كلمة المرور.",
+"resetYourPassword": "إعادة تعيين كلمة المرور",
+  "titleRequired": "العنوان مطلوب","passwordResetSuccessfully": "تم تغيير كلمة المرور بنجاح",
   "titleTooShort": "يجب أن يحتوي العنوان على 3 أحرف على الأقل",
 "descriptionRequired": "الوصف مطلوب",
 "descriptionTooShort": "يجب أن يحتوي الوصف على 10 أحرف على الأقل",

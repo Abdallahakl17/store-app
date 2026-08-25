@@ -8,6 +8,8 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:store_app/core/assets/app_assets.dart';
 import 'package:store_app/core/extensions/context_config.dart';
 import 'package:store_app/core/extensions/context_localization.dart';
+import 'package:store_app/core/extensions/context_navigation.dart';
+import 'package:store_app/core/navigation/app_routes.dart';
 import 'package:store_app/core/theme/app_spacing.dart';
 import 'package:store_app/core/utils/dialogs.dart';
 import 'package:store_app/core/widgets/app_button.dart';
@@ -27,32 +29,32 @@ class VerifyResetCodeScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final code = useState('');
-   final seconds = useState(60);
+    final seconds = useState(60);
 
-final timer = useRef<Timer?>(null);
+    final timer = useRef<Timer?>(null);
 
-void startTimer() {
-  timer.value?.cancel();
+    void startTimer() {
+      timer.value?.cancel();
 
-  timer.value = Timer.periodic(
-    const Duration(seconds: 1),
-    (timer) {
-      if (seconds.value > 0) {
-        seconds.value--;
-      } else {
-        timer.cancel();
-      }
-    },
-  );
-}
+      timer.value = Timer.periodic(
+        const Duration(seconds: 1),
+        (timer) {
+          if (seconds.value > 0) {
+            seconds.value--;
+          } else {
+            timer.cancel();
+          }
+        },
+      );
+    }
 
-useEffect(() {
-  startTimer();
+    useEffect(() {
+      startTimer();
 
-  return () {
-    timer.value?.cancel();
-  };
-}, []);
+      return () {
+        timer.value?.cancel();
+      };
+    }, []);
 
     return BlocConsumer<VerifyResetCodeCubit, VerifyResetCodeState>(
       listener: (context, state) {
@@ -69,7 +71,10 @@ useEffect(() {
               message,
             );
 
-            // بعدين نروح لـ Reset Password
+            context.pushNamed(
+              AppRoutes.resetPasswordView,
+              arguments: email,
+            );
             break;
 
           case VerifyResetCodeFailure(message: final message):
@@ -108,8 +113,11 @@ useEffect(() {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                MaterialPinField(keyboardType: TextInputType.number,
-                   length: 6,
+                MaterialPinField(
+                  theme:
+                      MaterialPinTheme(textStyle: context.textTheme.bodyMedium),
+                  keyboardType: TextInputType.number,
+                  length: 6,
                   obscureText: false,
                   onCompleted: (value) {
                     code.value = value;

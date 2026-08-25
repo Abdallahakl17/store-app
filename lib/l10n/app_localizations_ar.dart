@@ -174,7 +174,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get descriptionTooShort => 'يجب أن يحتوي الوصف على 10 أحرف على الأقل';
 
   @override
+  String get resetYourPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get resetPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get enterNewPassword => 'أدخل كلمة المرور الجديدة أدناه لإعادة تعيين كلمة المرور.';
+
+  @override
   String get fullName => 'الاسم بالكامل';
+
+  @override
+  String get newPassword => 'كلمة السر الجديدة';
 
   @override
   String get enterFullName => 'أدخل اسمك بالكامل';
@@ -211,6 +223,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterpassword => ' أدخل كلمة السر';
+
+  @override
+  String get passwordResetSuccessfully => 'تم تغيير كلمة المرور بنجاح';
 
   @override
   String get verifyCode => 'تحقق من الرمز';

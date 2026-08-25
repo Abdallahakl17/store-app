@@ -6,6 +6,8 @@ import 'package:store_app/core/di/service_locator.dart';
 import 'package:store_app/core/navigation/app_routes.dart';
 import 'package:store_app/features/auth/forgot_password/presentation/cubit/forgot_password_cubit.dart';
 import 'package:store_app/features/auth/forgot_password/presentation/screen/forgot_password_screen.dart';
+import 'package:store_app/features/auth/reset_password/presentation/cubit/reset_password_cubit.dart';
+import 'package:store_app/features/auth/reset_password/presentation/screeen/reset_password_screen.dart';
 import 'package:store_app/features/auth/sign_in/presentation/cubit/sign_in_cubit.dart';
 import 'package:store_app/features/auth/sign_in/presentation/screens/sign_in_screen.dart';
 import 'package:store_app/features/auth/sign_up/presentation/cubit/signup_cubit.dart';
@@ -44,8 +46,8 @@ abstract class AppRouter {
           return MaterialPageRoute(
               builder: (_) => BlocProvider(
                   create: (_) => getIt<ForgotPasswordCubit>(),
-                  child: ResetPasswordScreen()));
-      case AppRoutes.verifyView:
+                  child: ForgotPasswordScreen()));
+     case AppRoutes.verifyView:
   final email = routeSettings.arguments as String;
 
   return MaterialPageRoute(
@@ -64,6 +66,17 @@ abstract class AppRouter {
     ),
   );
 
+case AppRoutes.resetPasswordView:
+  final email = routeSettings.arguments as String;
+
+  return MaterialPageRoute(
+    builder: (_) => BlocProvider(
+      create: (_) => getIt<ResetPasswordCubit>(),
+      child: ResetPasswordScreen(
+        email: email,
+      ),
+    ),
+  );
         default:
           _errorRoute();
       }

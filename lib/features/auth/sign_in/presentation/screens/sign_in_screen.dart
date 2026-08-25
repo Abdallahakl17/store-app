@@ -181,7 +181,7 @@ class SignInScreen extends HookWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              // TODO: Navigate to Sign Up
+                               context.pushNamed(AppRoutes.registerView);
                             },
                             child: Text(
                               context.tr.createAccount,

@@ -21,6 +21,6 @@ class VerifyResetCodeRemoteDataSourceImpl
       data: request.toJson(),
     );
 
-    return response.data['status'] as String;
+  return response.data['status'] as String;
   }
 }

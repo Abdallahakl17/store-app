@@ -12,37 +12,45 @@ import 'package:store_app/core/utils/dialogs.dart';
 import 'package:store_app/core/validation/validators.dart';
 import 'package:store_app/core/widgets/app_button.dart';
 import 'package:store_app/core/widgets/form.dart';
-import 'package:store_app/features/auth/forgot_password/presentation/cubit/forgot_password_cubit.dart';
-import 'package:store_app/features/auth/forgot_password/presentation/cubit/forgot_password_state.dart';
 
-class ForgotPasswordScreen extends HookWidget {
-  const  ForgotPasswordScreen({super.key});
+import 'package:store_app/features/auth/reset_password/presentation/cubit/reset_password_cubit.dart';
+import 'package:store_app/features/auth/reset_password/presentation/cubit/reset_password_state.dart';
+
+class ResetPasswordScreen extends HookWidget {
+  const ResetPasswordScreen({
+    required this.email,
+    super.key,
+  });
+
+  final String email;
 
   @override
   Widget build(BuildContext context) {
     final formKey = useMemoized(GlobalKey<FormState>.new);
-    final emailController = useTextEditingController();
 
-    return BlocConsumer<ForgotPasswordCubit, ForgotPasswordState>(
+    final passwordController = useTextEditingController();
+
+    final isPasswordHidden = useState(true);
+
+    return BlocConsumer<ResetPasswordCubit, ResetPasswordState>(
       listener: (context, state) {
         switch (state) {
-          case ForgotPasswordInitial():
+          case ResetPasswordInitial():
             break;
 
-          case ForgotPasswordLoading():
+          case ResetPasswordLoading():
             break;
 
-          case ForgotPasswordSuccess(message: final message):
+          case ResetPasswordSuccess():
             DialogUtils.showSnackBar(
               context,
-              message,
+              context.tr.passwordResetSuccessfully,
             );
 
-            context.pushNamed(AppRoutes.verifyView,  arguments: emailController.text.trim(),
-);
+            // context.pushNamed(AppRoutes.homeView);
             break;
 
-          case ForgotPasswordFailure(message: final message):
+          case ResetPasswordFailure(message: final message):
             DialogUtils.showSnackBar(
               context,
               message,
@@ -51,56 +59,100 @@ class ForgotPasswordScreen extends HookWidget {
             break;
         }
       },
+
       builder: (context, state) {
         return Scaffold(
           backgroundColor: context.colorScheme.surface,
+
           appBar: AppBar(),
+
           body: SingleChildScrollView(
             child: Padding(
               padding: AppSpacing.lgAll,
+
               child: Form(
                 key: formKey,
+
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
+
                   children: [
                     Image.asset(
-                      AppAssets.forgetPassword,
+                      AppAssets.resetPassword,
                       fit: BoxFit.contain,
                     ),
+
                     Padding(
                       padding: AppSpacing.xlAll,
+
                       child: Text(
-                        context.tr.forgotPassword,
-                        style: context.textTheme.titleSmall,
+                        context.tr.resetYourPassword,
+                        style: context.textTheme.titleLarge,
+                        textAlign: TextAlign.center,
                       ),
                     ),
+
                     Text(
-                      context.tr.forgotPasswordDontWorry,
+                      context.tr.enterNewPassword,
                       style: context.textTheme.titleMedium,
                       textAlign: TextAlign.center,
                     ),
+
                     SizedBox(
                       height: AppSpacing.xxl,
                     ),
+
                     CustomTextField(
-                      controller: emailController,
-                      keyboardType: TextInputType.emailAddress,
+                      controller: passwordController,
+
+                      keyboardType: TextInputType.visiblePassword,
+
                       textInputAction: TextInputAction.done,
+
                       validator: (value) =>
-                          Validators.validateEmail(context, value),
-                      hintText: context.tr.enterEmailAddress,
+                          Validators.validatePassword(
+                        context,
+                        value,
+                      ),
+
+                      labelText: context.tr.newPassword,
+
+                      obscureText: isPasswordHidden.value,
+
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          isPasswordHidden.value =
+                              !isPasswordHidden.value;
+                        },
+
+                        icon: Icon(
+                          isPasswordHidden.value
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                        ),
+                      ),
                     ),
+
                     SizedBox(
                       height: AppSpacing.xxl,
                     ),
+
                     AppButton(
-                      text: context.tr.sendCode,
-                      isLoading: state is ForgotPasswordLoading,
+                      text: context.tr.resetPassword,
+
+                      isLoading: state is ResetPasswordLoading,
+
                       onPressed: () {
-                        if (!formKey.currentState!.validate()) return;
-            
-                        context.read<ForgotPasswordCubit>().forgotPassword(
-                              emailController.text.trim(),
+                        if (!formKey.currentState!.validate()) {
+                          return;
+                        }
+
+                        context
+                            .read<ResetPasswordCubit>()
+                            .resetPassword(
+                              email: email,
+                              newPassword:
+                                  passwordController.text.trim(),
                             );
                       },
                     ),

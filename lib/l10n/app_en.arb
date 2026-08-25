@@ -68,8 +68,11 @@
 
   "descriptionRequired": "Description is required",
   "descriptionTooShort": "Description must be at least 10 characters",
-  
+  "resetYourPassword": "Reset your password",
+  "resetPassword": "Reset password",
+"enterNewPassword"  :"Enter your new password below to reset your password.",
   "fullName": "Full Name",
+  "newPassword": "new Password",
   "enterFullName": "Enter your full name",
 "checkYourMail": "Check Your Mail",
 "checkYourMailDescription": "We’ve sent a verification code to your email. Check your inbox and enter the code below.",
@@ -82,7 +85,7 @@
   "emailAddress": "E-mail address",
   "enterEmailAddress": "Enter your email address",
   "enterpassword": "Enter your password  ",
-"checkYourMail": "Check Your Mail",
+"checkYourMail": "Check Your Mail","passwordResetSuccessfully": "Password reset successfully",
 "checkYourMailDescription": "We’ve sent a verification code to your email. Check your inbox and enter the code below.",
 "didntReceiveCode": "Didn't receive the code?",
 "resendCode": "Resend Code",

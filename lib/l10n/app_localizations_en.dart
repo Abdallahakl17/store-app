@@ -174,7 +174,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get descriptionTooShort => 'Description must be at least 10 characters';
 
   @override
+  String get resetYourPassword => 'Reset your password';
+
+  @override
+  String get resetPassword => 'Reset password';
+
+  @override
+  String get enterNewPassword => 'Enter your new password below to reset your password.';
+
+  @override
   String get fullName => 'Full Name';
+
+  @override
+  String get newPassword => 'new Password';
 
   @override
   String get enterFullName => 'Enter your full name';
@@ -211,6 +223,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterpassword => 'Enter your password  ';
+
+  @override
+  String get passwordResetSuccessfully => 'Password reset successfully';
 
   @override
   String get verifyCode => 'Verify Code';

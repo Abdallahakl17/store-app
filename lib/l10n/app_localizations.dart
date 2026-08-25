@@ -425,11 +425,35 @@ abstract class AppLocalizations {
   /// **'Description must be at least 10 characters'**
   String get descriptionTooShort;
 
+  /// No description provided for @resetYourPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset your password'**
+  String get resetYourPassword;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset password'**
+  String get resetPassword;
+
+  /// No description provided for @enterNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your new password below to reset your password.'**
+  String get enterNewPassword;
+
   /// No description provided for @fullName.
   ///
   /// In en, this message translates to:
   /// **'Full Name'**
   String get fullName;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'new Password'**
+  String get newPassword;
 
   /// No description provided for @enterFullName.
   ///
@@ -502,6 +526,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter your password  '**
   String get enterpassword;
+
+  /// No description provided for @passwordResetSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Password reset successfully'**
+  String get passwordResetSuccessfully;
 
   /// No description provided for @verifyCode.
   ///
