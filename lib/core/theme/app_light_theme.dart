@@ -32,6 +32,9 @@ class AppLightTheme {
           bodySmall: AppTextStyles.font12Regular.copyWith(
             color: AppColorScheme.light.onSurface,
           ),
+          labelSmall: AppTextStyles.font11Regular.copyWith(
+              color: AppColorScheme.light.onSurfaceVariant,
+              decorationColor: AppColorScheme.light.onSurfaceVariant),
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: AppColorScheme.light.surface,

@@ -234,8 +234,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get createAccount => 'إنشاء حساب';
 
   @override
+  String get viewAll => 'رؤية المزيد';
+
+  @override
+  String get homeAppliance => 'مستلزمات المنزل';
+
+  @override
   String get enterConfirmPassword => 'يرجى تأكيد كلمة المرور';
 
   @override
   String get passwordsDoNotMatch => 'كلمتا المرور غير متطابقتين';
+
+  @override
+  String get whatDoYouSearch => 'ماذا تريد ان تبحث';
 }

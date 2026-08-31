@@ -545,6 +545,18 @@ abstract class AppLocalizations {
   /// **'Sign up'**
   String get createAccount;
 
+  /// No description provided for @viewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'view all'**
+  String get viewAll;
+
+  /// No description provided for @homeAppliance.
+  ///
+  /// In en, this message translates to:
+  /// **'Home Appliance'**
+  String get homeAppliance;
+
   /// No description provided for @enterConfirmPassword.
   ///
   /// In en, this message translates to:
@@ -556,6 +568,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Passwords do not match'**
   String get passwordsDoNotMatch;
+
+  /// No description provided for @whatDoYouSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'what do you search for?'**
+  String get whatDoYouSearch;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

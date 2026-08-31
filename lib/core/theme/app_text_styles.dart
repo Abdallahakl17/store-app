@@ -49,5 +49,7 @@ abstract class AppTextStyles {
         fontSize: 11.sp,
         fontWeight: FontWeightHelper.regular,
         height: 18 / 11,
+        decoration: TextDecoration.lineThrough,
+        decorationThickness: 1,
       );
 }

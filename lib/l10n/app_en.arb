@@ -91,8 +91,11 @@
 "resendCode": "Resend Code",
 "verifyCode": "Verify Code",
    "createAccount": "Sign up",
+   "viewAll": "view all",
+   "homeAppliance": "Home Appliance",
    "enterConfirmPassword": "Please confirm your password",
-  "passwordsDoNotMatch": "Passwords do not match" 
+  "passwordsDoNotMatch": "Passwords do not match" ,
+  "whatDoYouSearch":"what do you search for?"
 
 
 }

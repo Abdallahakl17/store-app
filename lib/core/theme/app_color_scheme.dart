@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:store_app/core/theme/app_color.dart';
 
 class AppColorScheme {
-  static const ColorScheme light = ColorScheme(
+  static   ColorScheme light = ColorScheme(
     brightness: Brightness.light,
 
     primary: AppColors.primary,
@@ -16,5 +16,7 @@ class AppColorScheme {
 
     surface: AppColors.white,
     onSurface: AppColors.textPrimary,
+    surfaceContainer: AppColors.stroke, 
+    onSurfaceVariant:   AppColors.textSecondary
   );
 }

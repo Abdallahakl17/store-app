@@ -234,8 +234,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createAccount => 'Sign up';
 
   @override
+  String get viewAll => 'view all';
+
+  @override
+  String get homeAppliance => 'Home Appliance';
+
+  @override
   String get enterConfirmPassword => 'Please confirm your password';
 
   @override
   String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get whatDoYouSearch => 'what do you search for?';
 }

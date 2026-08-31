@@ -89,8 +89,12 @@
 "emailAddress": "البريد الإلكتروني",
 "enterEmailAddress": "أدخل بريدك الإلكتروني",
   "enterpassword": " أدخل كلمة السر",
+   "viewAll": "رؤية المزيد",
+   "homeAppliance": "مستلزمات المنزل",
 
-"createAccount": "إنشاء حساب"
+"createAccount": "إنشاء حساب",
+  "whatDoYouSearch":"ماذا تريد ان تبحث"
+
 
 
 

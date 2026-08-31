@@ -14,6 +14,7 @@ import 'package:store_app/features/auth/sign_up/presentation/cubit/signup_cubit.
 import 'package:store_app/features/auth/sign_up/presentation/screens/sing_up_screen.dart';
 import 'package:store_app/features/auth/verify_code/presentation/cubit/verify_reset_code_cubit.dart';
 import 'package:store_app/features/auth/verify_code/presentation/screen/verify_reset_code_screen.dart';
+import 'package:store_app/features/home/presentation/screen/home_screen.dart';
 import 'package:store_app/splash.dart';
 
 abstract class AppRouter {
@@ -47,36 +48,38 @@ abstract class AppRouter {
               builder: (_) => BlocProvider(
                   create: (_) => getIt<ForgotPasswordCubit>(),
                   child: ForgotPasswordScreen()));
-     case AppRoutes.verifyView:
-  final email = routeSettings.arguments as String;
+        case AppRoutes.verifyView:
+          final email = routeSettings.arguments as String;
 
-  return MaterialPageRoute(
-    builder: (_) => MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (_) => getIt<VerifyResetCodeCubit>(),
-        ),
-        BlocProvider(
-          create: (_) => getIt<ForgotPasswordCubit>(),
-        ),
-      ],
-      child: VerifyResetCodeScreen(
-        email: email,
-      ),
-    ),
-  );
+          return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (_) => getIt<VerifyResetCodeCubit>(),
+                ),
+                BlocProvider(
+                  create: (_) => getIt<ForgotPasswordCubit>(),
+                ),
+              ],
+              child: VerifyResetCodeScreen(
+                email: email,
+              ),
+            ),
+          );
 
-case AppRoutes.resetPasswordView:
-  final email = routeSettings.arguments as String;
+        case AppRoutes.resetPasswordView:
+          final email = routeSettings.arguments as String;
 
-  return MaterialPageRoute(
-    builder: (_) => BlocProvider(
-      create: (_) => getIt<ResetPasswordCubit>(),
-      child: ResetPasswordScreen(
-        email: email,
-      ),
-    ),
-  );
+          return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+              create: (_) => getIt<ResetPasswordCubit>(),
+              child: ResetPasswordScreen(
+                email: email,
+              ),
+            ),
+          );
+        case AppRoutes.homeView:
+          return MaterialPageRoute(builder: (_) => HomeScreen());
         default:
           _errorRoute();
       }
