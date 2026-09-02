@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/features/home/domain/entity/Product_entity.dart';
 
-import 'package:store_app/features/home/domain/entity/product_entity.dart';
-import 'package:store_app/features/home/domain/use_case/get_products_usecase.dart';
+ import 'package:store_app/features/home/domain/use_case/get_products_usecase.dart';
 
 import 'product_state.dart';
 

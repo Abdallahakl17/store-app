@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:store_app/features/home/domain/entity/product_entity.dart';
-
+import 'package:store_app/features/home/domain/entity/Product_entity.dart';
+ 
 abstract class ProductState extends Equatable {
   const ProductState();
 
