@@ -17,20 +17,22 @@ class ProductRepositoryImpl implements ProductRepository {
 
   const ProductRepositoryImpl(this.remoteDataSource);
 
-  @override
-  Future<Either<Failure, List<ProductEntity>>> getProducts() async {
-    try {
-      final products = await remoteDataSource.getProducts();
+ @override
+Future<Either<Failure, List<ProductEntity>>> getProducts(
+  int page,
+) async {
+  try {
+    final products = await remoteDataSource.getProducts(page);
 
-      return Right(products);
-    } on AppException catch (e) {
-      return Left(ErrorMapper.map(e));
-    } on DioException catch (e) {
-      return Left(
-        ErrorMapper.map(
-          DioExceptionMapper.map(e),
-        ),
-      );
-    }
+    return Right(products);
+  } on AppException catch (e) {
+    return Left(ErrorMapper.map(e));
+  } on DioException catch (e) {
+    return Left(
+      ErrorMapper.map(
+        DioExceptionMapper.map(e),
+      ),
+    );
   }
+}
 }

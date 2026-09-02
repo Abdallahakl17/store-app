@@ -11,7 +11,7 @@ class GetProductsUseCase {
 
   GetProductsUseCase(this.productRepository);
 
-  Future<Either<Failure, List<ProductEntity>>> call() {
-    return productRepository.getProducts();
-  }
+  Future<Either<Failure, List<ProductEntity>>> call(int page) {
+  return productRepository.getProducts(page);
+}
 }

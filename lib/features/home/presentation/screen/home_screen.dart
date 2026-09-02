@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:store_app/core/assets/app_assets.dart';
 import 'package:store_app/core/extensions/context_config.dart';
 import 'package:store_app/core/extensions/context_localization.dart';
+import 'package:store_app/core/extensions/context_navigation.dart';
+import 'package:store_app/core/navigation/app_routes.dart';
 import 'package:store_app/core/widgets/form.dart';
 import 'package:store_app/core/widgets/product_card.dart';
 import 'package:store_app/features/home/presentation/cubit/categories_cubit.dart';
@@ -121,10 +123,13 @@ class HomeScreen extends StatelessWidget {
                             image: product.imageCover,
                             name: product.title,
                             price: 'EGP ${product.price}',
-                            oldPrice: '',
+                            oldPrice: product.priceAfterDiscount != null
+                                ? '${product.priceAfterDiscount} EGP'
+                                : '',
                             rating: product.ratingsAverage.toString(),
                             onFavorite: () {},
                             onAdd: () {},
+                            isFavorite: true,
                           );
                         },
                       ),

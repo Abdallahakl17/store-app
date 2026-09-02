@@ -21,6 +21,15 @@ class ProductSuccess extends ProductState {
   List<Object?> get props => [products];
 }
 
+class ProductPaginationLoading extends ProductState {
+  final List<ProductEntity> products;
+
+  const ProductPaginationLoading(this.products);
+
+  @override
+  List<Object?> get props => [products];
+}
+
 class ProductFailure extends ProductState {
   final String message;
 

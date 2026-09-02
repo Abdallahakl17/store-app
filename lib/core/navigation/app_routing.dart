@@ -17,6 +17,7 @@ import 'package:store_app/features/auth/verify_code/presentation/screen/verify_r
 import 'package:store_app/features/home/presentation/cubit/categories_cubit.dart';
 import 'package:store_app/features/home/presentation/cubit/product_cubit.dart';
 import 'package:store_app/features/home/presentation/screen/home_screen.dart';
+import 'package:store_app/features/home/presentation/screen/product_screen.dart';
 import 'package:store_app/splash.dart';
 
 abstract class AppRouter {
@@ -80,22 +81,27 @@ abstract class AppRouter {
               ),
             ),
           );
-       case AppRoutes.homeView:
-  return MaterialPageRoute(
-    builder: (_) => MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (_) => getIt<CategoriesCubit>()
-            ..getCategories(),
-        ),
-        BlocProvider(
-          create: (_) => getIt<ProductCubit>()
-            ..getProducts(),
-        ),
-      ],
-      child: const HomeScreen(),
-    ),
-  );    default:
+        case AppRoutes.homeView:
+          return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (_) => getIt<CategoriesCubit>()..getCategories(),
+                ),
+                BlocProvider(
+                  create: (_) => getIt<ProductCubit>()..getProducts(),
+                ),
+              ],
+              child: const HomeScreen(),
+            ),
+          );
+        case AppRoutes.productView:
+          return MaterialPageRoute(
+              builder: (_) => BlocProvider(
+                    create: (_) => getIt<ProductCubit>()..getProducts(),
+                    child: ProductScreen(),
+                  ));
+        default:
           _errorRoute();
       }
     } catch (e, stackTrace) {

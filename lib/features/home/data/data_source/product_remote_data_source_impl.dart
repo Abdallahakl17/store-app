@@ -11,13 +11,18 @@ class ProductRemoteDataSourceImpl implements ProductRemoteDataSource {
   ProductRemoteDataSourceImpl(this.apiService);
 
   @override
-  Future<List<ProductModel>> getProducts() async {
+  Future<List<ProductModel>> getProducts(int page) async {
     final response = await apiService.get(
       endPoint: ApiEndpoints.products,
+      queryParameters: {
+        'page': page,
+      },
     );
 
     final List data = response.data['data'];
 
-    return data.map((json) => ProductModel.fromJson(json)).toList();
+    return data
+        .map((json) => ProductModel.fromJson(json))
+        .toList();
   }
 }

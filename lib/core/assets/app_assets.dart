@@ -24,5 +24,7 @@ class AppAssets {
   static const String favoriteIcon = '${iconsPath}favorite.svg';
   static const String categoryIcon = '${iconsPath}category.svg';
   static const String plusFilledIcon = '${iconsPath}plus_filled.svg';
-}
+  static const String fivoriteFilledIcon = '${iconsPath}fivorite_filled.svg';
+
+ } 
  
