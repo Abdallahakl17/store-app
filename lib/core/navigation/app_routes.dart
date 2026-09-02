@@ -11,6 +11,8 @@ abstract class AppRoutes {
   static const detailsView = 'detailsView';
   static const categoryMoviesView = 'categoryMoviesView';
   static const searchView = 'searchView';
+  static const wishlistView = 'wishlistView';
+
   static const profileView = 'profileView';
   static const productView = 'productView';
   static const editProfileView = 'editProfileView';

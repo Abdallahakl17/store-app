@@ -18,6 +18,8 @@ import 'package:store_app/features/home/presentation/cubit/categories_cubit.dart
 import 'package:store_app/features/home/presentation/cubit/product_cubit.dart';
 import 'package:store_app/features/home/presentation/screen/home_screen.dart';
 import 'package:store_app/features/home/presentation/screen/product_screen.dart';
+import 'package:store_app/features/wishlist/presentation/cubit/wishlist_cubit.dart';
+import 'package:store_app/features/wishlist/presentation/screen/wishlist_screen.dart';
 import 'package:store_app/splash.dart';
 
 abstract class AppRouter {
@@ -101,6 +103,11 @@ abstract class AppRouter {
                     create: (_) => getIt<ProductCubit>()..getProducts(),
                     child: ProductScreen(),
                   ));
+                  case AppRoutes.wishlistView:
+                  return MaterialPageRoute(builder: (_)=>BlocProvider(
+  create: (_) => getIt<WishlistCubit>()..getWishlist(),
+  child: const WishlistScreen(),
+));
         default:
           _errorRoute();
       }

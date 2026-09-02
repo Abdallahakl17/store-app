@@ -4,6 +4,7 @@ import 'package:store_app/core/extensions/context_config.dart';
 import 'package:store_app/core/widgets/product_card.dart';
 import 'package:store_app/features/home/presentation/cubit/product_cubit.dart';
 import 'package:store_app/features/home/presentation/cubit/product_state.dart';
+import 'package:store_app/features/wishlist/presentation/cubit/wishlist_cubit.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
@@ -40,7 +41,10 @@ class ProductScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final product = state.products[index];
 
-                return ProductCard(
+                return ProductCard(onFavorite: () {
+  context.read<WishlistCubit>().toggleFavorite(product.id);
+},
+
                   image: product.imageCover,
                   name: product.title,
                   price: product.priceAfterDiscount != null
@@ -49,7 +53,7 @@ class ProductScreen extends StatelessWidget {
                   oldPrice: product.priceAfterDiscount != null
                       ? '${product.price} EGP'
                       : '',
-                  rating: product.ratingsAverage.toString(), isFavorite:  true,
+                  rating: product.ratingsAverage.toString(), isFavorite:  context.watch<WishlistCubit>().isFavorite(product.id), 
                 );
               },
             );

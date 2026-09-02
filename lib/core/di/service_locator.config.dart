@@ -96,6 +96,22 @@ import '../../features/home/domain/use_case/get_categories_use_case.dart'
 import '../../features/home/domain/use_case/get_products_usecase.dart' as _i111;
 import '../../features/home/presentation/cubit/categories_cubit.dart' as _i820;
 import '../../features/home/presentation/cubit/product_cubit.dart' as _i1053;
+import '../../features/wishlist/data/data_source/wishlist_remote_data_source.dart'
+    as _i474;
+import '../../features/wishlist/data/data_source/wishlist_remote_data_source_impl.dart'
+    as _i94;
+import '../../features/wishlist/data/repository/wishlist_repository_impl.dart'
+    as _i669;
+import '../../features/wishlist/domain/repositories/wishlist_repository.dart'
+    as _i4;
+import '../../features/wishlist/domain/use_case/add_to_wishlist_usecase.dart'
+    as _i457;
+import '../../features/wishlist/domain/use_case/get_wishlist_usecase.dart'
+    as _i100;
+import '../../features/wishlist/domain/use_case/remove_from_wishlist_usecase.dart'
+    as _i453;
+import '../../features/wishlist/presentation/cubit/wishlist_cubit.dart'
+    as _i692;
 import '../network/api_service.dart' as _i921;
 import '../network/auth_interceptor.dart' as _i908;
 import '../services/token_storage_service.dart' as _i474;
@@ -127,6 +143,8 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i162.TalkerDioLogger>(),
         ));
     gh.lazySingleton<_i921.ApiService>(() => _i921.ApiService(gh<_i361.Dio>()));
+    gh.lazySingleton<_i474.WishlistRemoteDataSource>(
+        () => _i94.WishlistRemoteDataSourceImpl(gh<_i921.ApiService>()));
     gh.lazySingleton<_i53.ResetPasswordRemoteDataSource>(
         () => _i57.ResetPasswordRemoteDataSourceImpl(gh<_i921.ApiService>()));
     gh.lazySingleton<_i901.ForgotPasswordRemoteDataSource>(
@@ -151,6 +169,14 @@ extension GetItInjectableX on _i174.GetIt {
             ));
     gh.factory<_i224.ResetPasswordUseCase>(
         () => _i224.ResetPasswordUseCase(gh<_i729.ResetPasswordRepository>()));
+    gh.lazySingleton<_i4.WishlistRepository>(() =>
+        _i669.WishlistRepositoryImpl(gh<_i474.WishlistRemoteDataSource>()));
+    gh.lazySingleton<_i457.AddToWishlistUseCase>(
+        () => _i457.AddToWishlistUseCase(gh<_i4.WishlistRepository>()));
+    gh.lazySingleton<_i100.GetWishlistUseCase>(
+        () => _i100.GetWishlistUseCase(gh<_i4.WishlistRepository>()));
+    gh.lazySingleton<_i453.RemoveFromWishlistUseCase>(
+        () => _i453.RemoveFromWishlistUseCase(gh<_i4.WishlistRepository>()));
     gh.lazySingleton<_i17.SignInRepository>(() => _i91.SignInRepositoryImpl(
           gh<_i820.SignInRemoteDataSource>(),
           gh<_i474.TokenStorageService>(),
@@ -176,6 +202,11 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i215.GetCategoriesUseCase(gh<_i722.CategoriesRepository>()));
     gh.factory<_i705.SignInUseCase>(
         () => _i705.SignInUseCase(gh<_i17.SignInRepository>()));
+    gh.factory<_i692.WishlistCubit>(() => _i692.WishlistCubit(
+          gh<_i100.GetWishlistUseCase>(),
+          gh<_i457.AddToWishlistUseCase>(),
+          gh<_i453.RemoveFromWishlistUseCase>(),
+        ));
     gh.lazySingleton<_i111.GetProductsUseCase>(
         () => _i111.GetProductsUseCase(gh<_i168.ProductRepository>()));
     gh.factory<_i846.ForgotPasswordCubit>(

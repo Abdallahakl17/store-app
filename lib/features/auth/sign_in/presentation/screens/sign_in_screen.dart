@@ -48,11 +48,10 @@ class SignInScreen extends HookWidget {
               context.tr.success,
             );
 
-            // هنا بعدين تعمل navigation للـ Home
-            // Navigator.pushReplacementNamed(
-            //   context,
-            //   AppRoutes.home,
-            // );
+            Navigator.pushReplacementNamed(
+              context,
+              AppRoutes.homeView,
+            );
 
             break;
 
@@ -181,7 +180,7 @@ class SignInScreen extends HookWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                               context.pushNamed(AppRoutes.registerView);
+                              context.pushNamed(AppRoutes.registerView);
                             },
                             child: Text(
                               context.tr.createAccount,

@@ -8,21 +8,21 @@ class AuthInterceptor extends Interceptor {
   final TokenStorageService _tokenStorageService;
 
   AuthInterceptor(this._tokenStorageService);
+@override
+Future<void> onRequest(
+  RequestOptions options,
+  RequestInterceptorHandler handler,
+) async {
+  final token = await _tokenStorageService.getToken();
 
-  @override
-  Future<void> onRequest(
-    RequestOptions options,
-    RequestInterceptorHandler handler,
-  ) async {
-    final token = await _tokenStorageService.getToken();
+  if (token != null && token.isNotEmpty) {
+    options.headers['token'] = token;
 
-    if (token != null && token.isNotEmpty) {
-      options.headers['Authorization'] = 'Bearer $token';
-    }
-
-    handler.next(options);
+    print('TOKEN = $token');
   }
 
+  handler.next(options);
+}
   @override
   void onResponse(
     Response response,
