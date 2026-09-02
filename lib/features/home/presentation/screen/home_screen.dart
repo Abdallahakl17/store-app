@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -7,6 +8,10 @@ import 'package:store_app/core/extensions/context_config.dart';
 import 'package:store_app/core/extensions/context_localization.dart';
 import 'package:store_app/core/widgets/form.dart';
 import 'package:store_app/core/widgets/product_card.dart';
+import 'package:store_app/features/home/presentation/cubit/categories_cubit.dart';
+import 'package:store_app/features/home/presentation/cubit/categories_state.dart';
+import 'package:store_app/features/home/presentation/cubit/product_cubit.dart';
+import 'package:store_app/features/home/presentation/cubit/product_state.dart';
 import 'package:store_app/features/home/presentation/widget/categories_list.dart';
 import 'package:store_app/features/home/presentation/widget/home_banner.dart';
 
@@ -48,14 +53,32 @@ class HomeScreen extends StatelessWidget {
               // Banner
               const HomeBanner(),
 
-              // Categories
-              const CategoriesList(),
+              BlocBuilder<CategoriesCubit, CategoriesState>(
+                builder: (context, state) {
+                  if (state is CategoriesLoading) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
 
-              // Products title
+                  if (state is CategoriesFailure) {
+                    return Center(
+                      child: Text(state.message),
+                    );
+                  }
+
+                  if (state is CategoriesSuccess) {
+                    return CategoriesList(
+                      categories: state.categories,
+                    );
+                  }
+
+                  return const SizedBox();
+                },
+              ),
+
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                 child: Text(
                   context.tr.homeAppliance,
                   style: context.textTheme.titleLarge,
@@ -65,23 +88,51 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 12),
 
               // Products
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                ),
-                child: Row(
-                  children: [
-                    ProductCard(
-                      image: AppAssets.banner1,
-                      name: 'Product Name',
-                      price: 'EGP 1,000',
-                      oldPrice: '1,300 EGP',
-                      rating: '4.8',
-                      onFavorite: () {},
-                      onAdd: () {},
-                    ),
-                  ],
-                ),
+              BlocBuilder<ProductCubit, ProductState>(
+                builder: (context, state) {
+                  if (state is ProductLoading) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+
+                  if (state is ProductFailure) {
+                    return Center(
+                      child: Text(state.message),
+                    );
+                  }
+
+                  if (state is ProductSuccess) {
+                    final products = state.products.take(8).toList();
+
+                    return SizedBox(
+                      height: 250.h,
+                      child: ListView.separated(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                        ),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: products.length,
+                        separatorBuilder: (_, __) => SizedBox(width: 12.w),
+                        itemBuilder: (context, index) {
+                          final product = products[index];
+
+                          return ProductCard(
+                            image: product.imageCover,
+                            name: product.title,
+                            price: 'EGP ${product.price}',
+                            oldPrice: '',
+                            rating: product.ratingsAverage.toString(),
+                            onFavorite: () {},
+                            onAdd: () {},
+                          );
+                        },
+                      ),
+                    );
+                  }
+
+                  return const SizedBox();
+                },
               ),
 
               const SizedBox(height: 16),

@@ -14,6 +14,8 @@ import 'package:store_app/features/auth/sign_up/presentation/cubit/signup_cubit.
 import 'package:store_app/features/auth/sign_up/presentation/screens/sing_up_screen.dart';
 import 'package:store_app/features/auth/verify_code/presentation/cubit/verify_reset_code_cubit.dart';
 import 'package:store_app/features/auth/verify_code/presentation/screen/verify_reset_code_screen.dart';
+import 'package:store_app/features/home/presentation/cubit/categories_cubit.dart';
+import 'package:store_app/features/home/presentation/cubit/product_cubit.dart';
 import 'package:store_app/features/home/presentation/screen/home_screen.dart';
 import 'package:store_app/splash.dart';
 
@@ -78,9 +80,22 @@ abstract class AppRouter {
               ),
             ),
           );
-        case AppRoutes.homeView:
-          return MaterialPageRoute(builder: (_) => HomeScreen());
-        default:
+       case AppRoutes.homeView:
+  return MaterialPageRoute(
+    builder: (_) => MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => getIt<CategoriesCubit>()
+            ..getCategories(),
+        ),
+        BlocProvider(
+          create: (_) => getIt<ProductCubit>()
+            ..getProducts(),
+        ),
+      ],
+      child: const HomeScreen(),
+    ),
+  );    default:
           _errorRoute();
       }
     } catch (e, stackTrace) {

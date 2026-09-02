@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:store_app/core/assets/app_assets.dart';
 import 'package:store_app/core/extensions/context_config.dart';
- import 'package:store_app/core/theme/app_raduis.dart';
+import 'package:store_app/core/theme/app_raduis.dart';
 import 'package:store_app/core/theme/app_spacing.dart';
 
 class ProductCard extends StatelessWidget {
@@ -29,7 +29,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 240.h,
+      height: 250.h,
       width: 190.w,
       decoration: BoxDecoration(
         borderRadius: AppRadius.lgAll,
@@ -45,14 +45,13 @@ class ProductCard extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: AppRadius.mdTop,
-                child: Image.asset(
+                child: Image.network(
                   image,
                   fit: BoxFit.cover,
                   width: double.infinity,
                   height: 128.h,
                 ),
               ),
-
               Positioned(
                 top: 0,
                 right: -5.w,
@@ -67,12 +66,10 @@ class ProductCard extends StatelessWidget {
               ),
             ],
           ),
-
           Padding(
             padding: AppSpacing.smAll,
             child: Text(name),
           ),
-
           Padding(
             padding: AppSpacing.smHorizontal,
             child: Row(
@@ -86,9 +83,7 @@ class ProductCard extends StatelessWidget {
               ],
             ),
           ),
-
           const Spacer(),
-
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: AppSpacing.sm,
@@ -97,25 +92,22 @@ class ProductCard extends StatelessWidget {
             child: Row(
               children: [
                 const Text('Review'),
-
                 Padding(
                   padding: AppSpacing.smAll,
                   child: Text('($rating)'),
                 ),
-
                 SvgPicture.asset(
                   AppAssets.starIcon,
                 ),
-
-                const Spacer(),
-
+                const Spacer(flex: 2,),
                 GestureDetector(
                   onTap: onAdd,
                   child: SvgPicture.asset(
                     AppAssets.plusFilledIcon,
                   ),
                 ),
-              ],
+                        const Spacer(),
+      ],
             ),
           ),
         ],

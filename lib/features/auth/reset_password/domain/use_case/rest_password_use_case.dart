@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:store_app/core/error/failures/failures.dart';
 import 'package:store_app/features/auth/reset_password/domain/repositories/rest_password_repository.dart';
-@lazySingleton
+@injectable
 
 class ResetPasswordUseCase {
   final ResetPasswordRepository  resetPasswordRepository;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:store_app/core/assets/app_assets.dart';
 import 'package:store_app/core/theme/app_raduis.dart';
- import 'package:store_app/core/theme/app_spacing.dart';
+import 'package:store_app/core/theme/app_spacing.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({super.key});
@@ -30,7 +30,7 @@ class HomeBanner extends StatelessWidget {
             child: Image.asset(
               banners[index],
               width: double.infinity,
-              fit: BoxFit.contain,
+              fit: BoxFit.cover,
             ),
           ),
         );
