@@ -8,8 +8,8 @@ import 'package:store_app/core/error/exceptions/app_exception.dart';
 import 'package:store_app/core/error/failures/failures.dart';
 
 import 'package:store_app/features/home/data/data_source/product_remote_data_source.dart';
-import 'package:store_app/features/home/domain/entity/product_entity.dart';
-import 'package:store_app/features/home/domain/repositories/product_repository.dart';
+import 'package:store_app/features/home/domain/entity/Product_entity.dart';
+ import 'package:store_app/features/home/domain/repositories/product_repository.dart';
 
 @LazySingleton(as: ProductRepository)
 class ProductRepositoryImpl implements ProductRepository {
